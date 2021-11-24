@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-tran.dtd">
+<html xmls="https://www.w3.org/1999/xhtm" xml:lang="sp" lang="sp">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registro de alumno</title>
+    <!-- CSS  -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--<link rel="stylesheet" href="../../../css/validacion.css"  type="text/css">-->
+</head>
+
+<body>
+    <!--Barra de navegacion-->
+    <nav class="nav-wrapper blue darken-3" role="navigation">
+        <div class="nav-wrapper container ">
+            <a id="logo-container" href="../../../index.html" class="brand-logo white-text"><img
+                    src="../../../recursos/logoESCOM.png" width="85%" height="85%"></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="html/usuarios/alumno/formRegistro.html" class="white-text">Registrarse</a></li>
+                <li><a href="#" class="white-text">Iniciar Sesión</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav blue darken-4">
+                <li><a href="#" class="white-text">Iniciar Sesión</a></li>
+                <li><a href="formRegistro.html" class="white-text">Registrarse</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger  white-text"><i
+                    class="material-icons">menu</i></a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <form action="Mensaje.html" class="col s12" id="formulario">
+                <fieldset>
+                    <legend>Identidad </legend>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="boleta" size="10" name="boleta" maxlength="10" class="validate">
+                            <label for="boleta">No. de Boleta</label>
+                        </div>
+                       
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="Nombre" size="30" name="nombre" class="validate">
+                            <label for="nombre" >Nombre</label>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="apePat" size="20" name="apellidopat"class="validate">
+                            <label for="apePat">Apellido Paterno</label>
+                        </div>
+                       
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="apeMate" size="20" name="apellidomat"class="validate">
+                            <label for="apeMate">Apellido Materno</label>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="date" id="nacimiento" class="validate">
+                            <label for="nacimiento">Fecha de Nacimiento</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="SelecGenero">G&eacute;nero</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12" id="genero">
+                            <p>
+                                <label>
+                                    <input name="SelecGenero" type="radio" id="SelecM" checked />
+                                    <span>Masculino</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input name="SelecGenero" type="radio" id="SelecF" />
+                                    <span>Femenino</span>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="curp" size="20" minlength="18" maxlength="18" name="CURP" class="validate">
+                            <label for="curp">CURP</label>
+                        </div>
+                        
+                    </div>
+                </fieldset>
+
+                <br><br>
+                <fieldset>
+                    <legend>Contacto</legend>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="dir1" class="validate">
+                            <label for="dir1">Calle y número: </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="col" class="validate">
+                            <label for="col">Colonia: </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="alcaldia">Alcaldía: </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select name="Alcaldia" id="alcaldia" class="browser-default">
+                                <option value="0" disabled selected>-- Seleccione una --</option>
+                                <option value="AlvOb">&Aacute;lvaro Obreg&oacute;n</option>
+                                <option value="Azca">Azcapotzalco</option>
+                                <option value="BenJu">Benito Ju&aacute;rez</option>
+                                <option value="Coyo">Coyoac&aacute;n</option>
+                                <option value="Cuaji">Cuajimalpa</option>
+                                <option value="Cuau">Cuauht&eacute;moc</option>
+                                <option value="GAM">Gustavo A. Madero</option>
+                                <option value="Iztaca">Iztacalco</option>
+                                <option value="Iztapa">Iztapalapa</option>
+                                <option value="MagCon">Magdalena Contreras</option>
+                                <option value="MigHid">Miguel Hidalgo</option>
+                                <option value="MilpAlt">Milpa Alta</option>
+                                <option value="Tla">Tl&aacute;huac</option>
+                                <option value="Tlal">Tlalpan</option>
+                                <option value="VenCarr">Venustiano Carranza</option>
+                                <option value="Xochi">Xochimilco</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="number" id="CP" name="codigopostal" class="validate">
+                            <label for="CP">C&oacute;digo Postal: </label>
+                        </div>
+                       
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="number" id="tel" name="telefono" class="validate">
+                            <label for="tel">Tel&eacute;fono o celular: </label>
+                        </div>
+                    
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="correo" name="correo" class="validate">
+                            <label for="correo">Correo electr&oacute;nico: </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <br><br>
+
+                <fieldset>
+                    <legend>Procedencia </legend>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="escuela">Escuela de procedencia: </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select name="escuela" id="escuela" class="browser-default">
+                                <option value="0" disabled selected>--Selecciona una --</option>
+                                <option value="cecyt1">CECyT 1 “Gonzalo V&aacute;zquez Vela”</option>
+                                <option value="cecyt2">CECyT 2 "Miguel Bernard Perales"</option>
+                                <option value="cecyt3">CECyT 3 "Estanislao Ramirez Ru&iacute;z"</option>
+                                <option value="cecyt4">CECyT 4 "L&aacute;zaro C&aacute;rdenas"</option>
+                                <option value="cecyt5">CECyT 5 "Benito Ju&aacute;rez Garc&iacute;a"</option>
+                                <option value="cecyt6">CECyT 6 "Miguel Oth&oacute;n de Mendiz&aacute;bal"</option>
+                                <option value="cecyt7">CECyT 7 "Cuauht&eacute;moc"</option>
+                                <option value="cecyt8">CECyT 8 "Narciso Bassols Garc&iacute;a"</option>
+                                <option value="cecyt9">CECyT 9 "Juan de Dios B&aacute;tiz"</option>
+                                <option value="cecyt10">CECyT 10 "Carlos Vallejo M&aacute;rquez"</option>
+                                <option value="cecyt11">CECyT 11 "Wilfrido Massieu P&eacute;rez"</option>
+                                <option value="cecyt12">CECyT 12 "Jos&eacute; Mar&iacute;a Morelos y Pav&oacute;n"</option>
+                                <option value="cecyt13">CECyT 13 "Ricardo Flores Mag&oacute;n"</option>
+                                <option value="cecyt14">CECyT 14 "Luis Enrique Erro"</option>
+                                <option value="cecyt15">CECyT 15 "Di&oacute;doro Ant&uacute;nez Echegaray"</option>
+                                <option value="cecyt16">CECyT 16 "Hidalgo"</option>
+                                <option value="cecyt17">CECyT 17 "Le&oacute;n, Guanajuato"</option>
+                                <option value="cecyt18">CECyT 18 "Zacatecas"</option>
+                                <option value="cecyt19">CECyT 19 “Leona Vicario”</option>
+                                <option value="cet1">CET 1 “Walter Cross Buchanan”</option>
+                                <option value="oo">Otra Opci&oacute;n</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="entidad">Entidad federativa </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select id="entidad"name="entidad" class="browser-default">
+                                <option value="0" disabled selected>--Selecciona una --</option>
+                                <option value="uno">Aguascalientes</option>
+                                <option value="dos">Baja California</option>
+                                <option value="tres">Baja California Sur</option>
+                                <option value="cuatro">Campeche</option>
+                                <option value="cinco">Coahuila</option>
+                                <option value="seis">Colima</option>
+                                <option value="siete">Chiapas</option>
+                                <option value="ocho">Chihuahua</option>
+                                <option value="nueve">Durango</option>
+                                <option value="diez">Ciudad de M&eacute;xico</option>
+                                <option value="once">Guanajuato</option>
+                                <option value="doce">Guerrero</option>
+                                <option value="trece">Hidalgo</option>
+                                <option value="catorce">Jalisco</option>
+                                <option value="quice">Michoac&aacute;n</option>
+                                <option value="dieciseis">Morelos</option>
+                                <option value="diecisiete">Estado de M&eacute;xico</option>
+                                <option value="dieciocho">Nayarit</option>
+                                <option value="diecinueve">Nuevo Le&oacute;n</option>
+                                <option value="veinte">Oaxaca</option>
+                                <option value="veintiuno">Puebla</option>
+                                <option value="veintidos">Quer&eacute;taro</option>
+                                <option value="veintitres">Quintana Roo</option>
+                                <option value="veinticuatro">San Luis Potos&iacute;</option>
+                                <option value="veinticinco">Sinaloa</option>
+                                <option value="veintiseis">Sonora</option>
+                                <option value="veintisiete">Tabasco</option>
+                                <option value="veintiocho">Tamaulipas</option>
+                                <option value="veintinueve">Tlaxcala</option>
+                                <option value="treinta">Veracruz</option>
+                                <option value="treintayuno">Yucat&aacute;</option>
+                                <option value="treintaydos">Zacatecas</option>
+        
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" id="nomescuela" class="validate">
+                            <label for="nomescuela">Nombre de la escuela: </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="number" id="promedio" step="0.01" min="0" max="10" class="validate">
+                            <label for="promedio">Promedio: </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="escomopcion">ESCOM fue tu opci&oacute;n:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <p>
+                                <label>
+                                  <input type="radio" id="escomopcion" value="opcion" name="opc"/>
+                                  <span>Primera opci&oacute;n</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                  <input type="radio" id="escomopcion" value="opcion" name="opc"/>
+                                  <span>Segunda opci&oacute;n</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                  <input type="radio" id="escomopcion" value="opcion" name="opc"/>
+                                  <span>Tercera opci&oacute;n</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                  <input type="radio" id="escomopcion" value="opcion" name="opc"/>
+                                  <span>Cuarta opci&oacute;n</span>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                </fieldset>
+                <br><br>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                    <i class="material-icons right">send</i>
+                </button>
+                <button class="btn waves-effect waves-light" type="submit"  name="action">Limpiar
+                    <i class="material-icons right">delete</i>
+                </button>
+            </form>
+            <div id='error'></div>
+        </div>
+
+    </div>
+    <script src="../../../js/validacion.js"></script>
+</body>
+
+</html>
