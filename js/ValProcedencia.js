@@ -1,5 +1,16 @@
 const identidad = document.getElementById('formulario');//trae el formulario
 const inputs = document.querySelectorAll('#formulario input')//almacena lo que hay en los inputs del formulario
+
+// Valida que se hayan seleccionado tanto la escuela de procedencia como la entidad federativa 
+function validarSelecciones() {
+    var optEsc = document.forms["formulario"]["escuela"].selectedIndex;
+    if (optEsc == null || optEsc == 0) {
+        alert("Debe seleccionar una opción en el campo 'Alcadia'");
+        return false;
+    }
+}
+
+
 const expresiones = {
     boleta: /^(^PP[\d]{8})|(^PE[\d]{8})|([\d]{10})$/,
     nombre: /^[a-zA-ZÀ-ÿ\s]{3,30}$/,//puede llevar letras mayusculas y minusculas, con acento y espacios, de 3 a 30 caracteres
