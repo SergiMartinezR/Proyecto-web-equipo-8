@@ -8,7 +8,7 @@
     <!-- CSS  -->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    
+    <link href="../../../css/validacion.css" rel="stylesheet" type="text/css">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -38,41 +38,46 @@
     </nav>
     <div class="container">
         <div class="row">
-            <form action="Mensaje.html" class="col s12" id="formulario" onsubmit="return validar();">
+            <form action="Mensaje.html" class="col s12" onsubmit="return validarForm()" id="formulario"method="post">
                 <fieldset>
                     <legend>Identidad </legend>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <input type="text" id="boleta" size="10" name="boleta" maxlength="10" class="validate" >
+                        <div class="input-field col s12" id="grupo_boleta">
+                            <input type="text" id="boleta" size="10" name="boleta" maxlength="10" class="validate" required>
                             <label for="boleta">No. de Boleta</label>
+                            <p class="formulario__input-error">Esa boleta no existe</p>
                         </div>
                        
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input type="text" id="Nombre" size="30" name="nombre" class="validate" >
+                    <div class="row" >
+                        <div class="input-field col s12" id="grupo_nombre">
+                            <input type="text" id="nombre" size="30" name="nombre" class="validate" required>
                             <label for="nombre" >Nombre</label>
+                            <p class="formulario__input-error">El nombre solo puede contener letras</p>
                         </div>
 
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <input type="text" id="apePat" size="20" name="apellidopat"class="validate" >
+                        <div class="input-field col s12" id="grupo_paterno">
+                            <input type="text" id="paterno" size="20" name="paterno"class="validate" required>
                             <label for="apePat">Apellido Paterno</label>
+                            <p class="formulario__input-error">El apellido paterno solo puede contener letras</p>
                         </div>
                        
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <input type="text" id="apeMate" size="20" name="apellidomat"class="validate" >
+                        <div class="input-field col s12" id="grupo_materno">
+                            <input type="text" id="materno" size="20" name="materno"class="validate" required>
                             <label for="apeMate">Apellido Materno</label>
+                            <p class="formulario__input-error">El apellido materno solo puede contener letras</p>
                         </div>
                         
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <input type="date" id="nacimiento" class="validate" >
+                        <div class="input-field col s12" id="grupo_nacimiento">
+                            <input type="date" id="nacimiento" name="nacimiento" class="validate" required>
                             <label for="nacimiento">Fecha de Nacimiento</label>
+                            <p class="formulario__input-error">El formato de la fecha no es el siguiente: dd/mm/aaaa</p>
                         </div>
                     </div>
                     <div class="row">
@@ -81,25 +86,26 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12" id="genero" >
+                        <div class="input-field col s12" id="genero">
                             <p>
                                 <label>
-                                    <input name="SelecGenero" type="radio" id="SelecM"  />
+                                    <input name="SelecGenero" type="radio" id="SelecM" required/>
                                     <span>Masculino</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input name="SelecGenero" type="radio" id="SelecF" />
+                                    <input name="SelecGenero" type="radio" id="SelecF" required/>
                                     <span>Femenino</span>
                                 </label>
                             </p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <input type="text" id="curp" size="20" minlength="18" maxlength="18" name="CURP" class="validate" >
+                        <div class="input-field col s12" id="grupo_curp">
+                            <input type="text" id="curp" size="20"  minlength="18" maxlength="18" name="curp" class="validate" required>
                             <label for="curp">CURP</label>
+                            <p class="formulario__input-error">El CURP no existe</p>
                         </div>
                         
                     </div>
@@ -107,27 +113,29 @@
 
                 <br><br>
                 <fieldset>
-                    <legend>Contacto</legend><!--Contacto-->
+                    <legend>Contacto</legend>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <input type="text" id="dir1" class="validate" >
+                        <div class="input-field col s12" id="grupo_direccion">
+                            <input type="text" id="direccion" name="direccion" class="validate" required>
                             <label for="dir1">Calle y número: </label>
+                            <p class="formulario__input-error">Calle y número invalidos</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <input type="text" id="col" class="validate">
+                        <div class="input-field col s12" id="grupo_colonia">
+                            <input type="text" id="colonia" name="colonia" class="validate" required>
                             <label for="col">Colonia: </label>
+                            <p class="formulario__input-error">Colonia invalida</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
+                        <div class="input-field col s12" >
                             <label for="alcaldia">Alcaldía: </label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <select name="Alcaldia" id="alcaldia" class="browser-default" >
+                        <div class="input-field col s12" id="alcaldia" r>
+                            <select  name="alcaldia" id="alcaldia" class="browser-default" required>
                                 <option value="0" disabled selected>-- Seleccione una --</option>
                                 <option value="AlvOb">&Aacute;lvaro Obreg&oacute;n</option>
                                 <option value="Azca">Azcapotzalco</option>
@@ -145,27 +153,32 @@
                                 <option value="Tlal">Tlalpan</option>
                                 <option value="VenCarr">Venustiano Carranza</option>
                                 <option value="Xochi">Xochimilco</option>
+                                <p class="formulario__input-error">Seleccione una alcaldia</p>
                             </select>
+                            
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <input type="number" id="CP" name="codigopostal" class="validate" >
+                        <div class="input-field col s12" id="grupo_CP">
+                            <input type="number" id="CP" name="CP" size="5" maxlength="5" class="validate" required>
                             <label for="CP">C&oacute;digo Postal: </label>
+                            <p class="formulario__input-error">Codigo Postal invalido (Recuerde que debe contener 5 números)</p>
                         </div>
                        
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <input type="number" id="tel" name="telefono" class="validate" >
+                        <div class="input-field col s12" id="grupo_telefono">
+                            <input type="number" id="telefono" name="telefono" size="10" maxlength="10" class="validate" required>
                             <label for="tel">Tel&eacute;fono o celular: </label>
+                            <p class="formulario__input-error">Telefono o celular invalido. *Recuerde que el telefono debe conter 10 números</p>
                         </div>
                     
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <input type="text" id="correo" name="correo" class="validate" >
+                        <div class="input-field col s12" id="grupo_correo">
+                            <input type="text" id="correo" name="correo" class="validate" required>
                             <label for="correo">Correo electr&oacute;nico: </label>
+                            <p class="formulario__input-error">Correo Invalido * Ejemplo: perez123@gmail.com</p>
                         </div>
                     </div>
                 </fieldset>
@@ -180,7 +193,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <select name="escuela" id="escuela" class="browser-default" >
+                            <select name="escuela" id="escuela" class="browser-default">
                                 <option value="0" disabled selected>--Selecciona una --</option>
                                 <option value="cecyt1">CECyT 1 “Gonzalo V&aacute;zquez Vela”</option>
                                 <option value="cecyt2">CECyT 2 "Miguel Bernard Perales"</option>
@@ -213,7 +226,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <select id="entidad"name="entidad" class="browser-default" >
+                            <select id="entidad"name="entidad" class="browser-default">
                                 <option value="0" disabled selected>--Selecciona una --</option>
                                 <option value="uno">Aguascalientes</option>
                                 <option value="dos">Baja California</option>
@@ -253,13 +266,13 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="text" id="nomescuela" class="validate" >
+                            <input type="text" id="nomescuela" class="validate">
                             <label for="nomescuela">Nombre de la escuela: </label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input type="number" id="promedio" step="0.01" min="0" max="10" class="validate" >
+                            <input type="number" id="promedio" step="0.01" min="0" max="10" class="validate">
                             <label for="promedio">Promedio: </label>
                         </div>
                     </div>
@@ -301,7 +314,7 @@
                 <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
                     <i class="material-icons right">send</i>
                 </button>
-                <button class="btn waves-effect waves-light" type="submit"  name="action">Limpiar
+                <button class="btn waves-effect waves-light" type="submit"  name="limpiar">Limpiar
                     <i class="material-icons right">delete</i>
                 </button>
             </form>
@@ -310,6 +323,8 @@
 
     </div>
     <script src="../../../js/validacion.js"></script>
+    <script src="../../../js/ValIdentidad.js"></script><!--Para validar la identidad del alumno-->
+    <script src="../../../js/ValContacto.js"></script><!--Para validar el contacto del alumno-->
 </body>
 
 </html>
