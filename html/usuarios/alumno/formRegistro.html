@@ -193,7 +193,8 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <select name="escuela" id="escuela" class="browser-default">
+                            <script src="../../../js/ValProcedencia.js"></script>
+                            <select name="escuela" id="escuela" class="browser-default" onchange="showNomEsc(this)">
                                 <option value="0" disabled selected>--Selecciona una --</option>
                                 <option value="cecyt1">CECyT 1 “Gonzalo V&aacute;zquez Vela”</option>
                                 <option value="cecyt2">CECyT 2 "Miguel Bernard Perales"</option>
@@ -217,6 +218,14 @@
                                 <option value="cet1">CET 1 “Walter Cross Buchanan”</option>
                                 <option value="oo">Otra Opci&oacute;n</option>
                             </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <span id="innomescuela" style="display:none">
+                                <input type="text" id="nomescuela" class="validate">
+                                <label for="nomescuela">Nombre de la escuela: </label>
+                            </span>
                         </div>
                     </div>
                     <div class="row">
@@ -262,12 +271,6 @@
                                 <option value="treintaydos">Zacatecas</option>
         
                             </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input type="text" id="nomescuela" class="validate">
-                            <label for="nomescuela">Nombre de la escuela: </label>
                         </div>
                     </div>
                     <div class="row">
@@ -325,6 +328,7 @@
     <script src="../../../js/validacion.js"></script>
     <script src="../../../js/ValIdentidad.js"></script><!--Para validar la identidad del alumno-->
     <script src="../../../js/ValContacto.js"></script><!--Para validar el contacto del alumno-->
+    <script src="../../../js/ValProcedencia.js"></script> <!--Para validar la procedencia del alumno-->
 </body>
 
 </html>
