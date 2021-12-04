@@ -12,7 +12,7 @@
     /*display: none; /*oulta el mensaje de lo que debe contener la seccion de nombre curp,etc*/
 }
 .formulario__input-error-activo{ /*muestra el mensaje de error*/
-    color: #642424;
+    color: #781c44;
     display:block;
 
 }
@@ -29,16 +29,24 @@
 
 /* cambia de color los inputs a rojo */
 .input-field-incorrecto input:focus + label {
-    color: #642424 !important;
+    color: #781c44 !important;
   }
   
   .row .input-field-incorrecto input:focus {
-    border-bottom: 1px solid #642424 !important;
-    box-shadow: 0 1px 0 0 #642424 !important
+    border-bottom: 1px solid #781c44 !important;
+    box-shadow: 0 1px 0 0 #781c44 !important
   }
+  /*colores*/
   .colorGuinda1{
-    background-color: #642424;
+    background-color: #781c44;
   }
   .colorGuinda1:hover{
-    background-color: #781c44;
+    background-color: #642424;
+  }
+
+  .colorEscom1{
+    background-color: #1591cf;
+  }
+  .colorEscom1:hover{
+    background-color: #095378;
   }

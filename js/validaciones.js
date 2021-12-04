@@ -1,4 +1,4 @@
-const identidad = document.getElementById('formulario');//trae el formulario
+const formulario = document.getElementById('formulario');//trae el formulario
 const inputs = document.querySelectorAll('#formulario input')//almacena lo que hay en los inputs del formulario
 
 const expresiones = {
@@ -13,7 +13,7 @@ const expresiones = {
     telefono: /^\d{10}$/,
     CP: /^(\d{5})$/,
     correo: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
-    promedio: /^[0-1]\d+\.\d\d$/
+    promedio: /^(10+\.\d\d)|([6-9]+\.\d\d)$/
 }
 const campos = {
     boleta: false,
@@ -55,7 +55,7 @@ const validarIdentidad = (e) => {
             validarCampos(expresiones.curp, e.target, e.target.name);//se le pasa la expresion regular, el input a evaluar y el div a cambiar
             break;
         case "direccion":
-            e.target.value = e.target.value.toUpperCase();
+            //e.target.value = e.target.value.toUpperCase();
             validarCampos(expresiones.direccion, e.target, e.target.name);//se le pasa la expresion regular, el input a evaluar y el div a cambiar
             break;
         case "colonia":
@@ -86,6 +86,7 @@ const validarCampos = (expresion, input, campo) => {
         document.getElementById(`grupo_${campo}`).classList.add('input-field-correcto');
         //se esconde el mensaje
         document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+        campos[campo] = true;
         //si no cumple la expresion regular, se muestra el mensaje de corregir
     } else {
         document.q
@@ -95,6 +96,7 @@ const validarCampos = (expresion, input, campo) => {
         document.getElementById(`grupo_${campo}`).classList.remove('input-field-correcto');
         //se esconde el mensaje
         document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+        campos[campo] = false;
     }
 }
 //cada vez que se precione una tecla o se deje de escrbir en el campo se ejecuta esto
@@ -102,15 +104,29 @@ inputs.forEach((input) => {
     input.addEventListener('keyup', validarIdentidad);
     input.addEventListener('blur', validarIdentidad);
 })
-identidad.addEventListener('submit', (e) => {
-    const genero = document.getElementById('genero');
-    const VerificarGenero = genero.checked // si esta marcado el genero
-    e.preventDefault();
-    if (campos.usuario && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked) {
-        formulario.reset();
-    }
-})
+formulario.addEventListener('submit', (e) => {
+    
 
+    const terminos = document.getElementById('terminos');
+    if (campos.nombre && campos.paterno && campos.CP && campos.alcaldia && campos.boleta && campos.colonia 
+        && campos.correo && campos.curp && campos.direccion && campos.genero && campos.materno && campos.telefono
+        && campos.nacimiento && terminos.checked ) {
+        
+        /*formulario.reset();
+
+        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+        setTimeout(() => {
+            document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+        }, 5000);
+
+        document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+            icono.classList.remove('formulario__grupo-correcto');
+        });*/
+    } else {
+        e.preventDefault();
+        /*document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');*/
+    }
+});
 
 //Funciones
 //Validacion de identidad
@@ -156,7 +172,7 @@ function validarSelecciones() {
         alert("Debe seleccionar una opción en el campo 'ESCOM fue tu opción:'");
         return false;
     }*/
-    return true;
+    //return true;
 }
 
 
