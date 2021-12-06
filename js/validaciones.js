@@ -1,5 +1,6 @@
 const formulario = document.getElementById('formulario');//trae el formulario
-const inputs = document.querySelectorAll('#formulario input')//almacena lo que hay en los inputs del formulario
+const inputs = document.querySelectorAll('#formulario input');//almacena lo que hay en los inputs del formulario
+const selects = document.querySelectorAll('#formulario select');
 
 const expresiones = {
     boleta: /^(^PP[\d]{8})|(^PE[\d]{8})|([\d]{10})$/,
@@ -21,14 +22,14 @@ const campos = {
     paterno: false,
     materno: false,
     nacimiento: false,
-    genero: false,
     curp: false,
     direccion: false,
     colonia: false,
     alcaldia: false,
     CP: false,
     telefono: false,
-    correo: false
+    correo: false,
+    alcaldia: false
 
 }
 const validarIdentidad = (e) => {
@@ -73,6 +74,9 @@ const validarIdentidad = (e) => {
         case "promedio":
             validarCampos(expresiones.promedio, e.target, e.target.name);//se le pasa la expresion regular, el input a evaluar y el div a cambiar
             break;
+        case "alcaldia":
+                validarSelect(e.target, e.target.name);
+            break;
 
     }
 }
@@ -104,14 +108,36 @@ inputs.forEach((input) => {
     input.addEventListener('keyup', validarIdentidad);
     input.addEventListener('blur', validarIdentidad);
 })
+
+//cada vez que se precione una tecla o se deje de escrbir en el campo se ejecuta esto
+selects.forEach((select) => {
+    select.addEventListener('click', validarIdentidad);
+    select.addEventListener('change', validarIdentidad);
+})
 formulario.addEventListener('submit', (e) => {
     
+    
 
-    const terminos = document.getElementById('terminos');
+
+    const alcaldia = document.getElementById('alcaldia');
+
     if (campos.nombre && campos.paterno && campos.CP && campos.alcaldia && campos.boleta && campos.colonia 
-        && campos.correo && campos.curp && campos.direccion && campos.genero && campos.materno && campos.telefono
-        && campos.nacimiento && terminos.checked ) {
-        
+        && campos.correo && campos.curp && campos.direccion && campos.materno && campos.telefono
+        && campos.nacimiento && campos.alcaldia) {
+        console.log(campos.nombre);   
+        console.log(campos.paterno);   
+        console.log(campos.CP);   
+        console.log(campos.alcaldia);   
+        console.log(campos.boleta);   
+        console.log(campos.colonia);   
+        console.log(campos.correo);   
+        console.log(campos.curp);   
+        console.log(campos.direccion);       
+        console.log(campos.materno);   
+        console.log(campos.telefono);   
+        console.log(campos.nacimiento);    
+        console.log("Se envia");
+        e.submit();
         /*formulario.reset();
 
         document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
@@ -123,20 +149,42 @@ formulario.addEventListener('submit', (e) => {
             icono.classList.remove('formulario__grupo-correcto');
         });*/
     } else {
+        console.log(campos.nombre);   
+        console.log(campos.paterno);   
+        console.log(campos.CP);   
+        console.log(campos.alcaldia);   
+        console.log(campos.boleta);   
+        console.log(campos.colonia);   
+        console.log(campos.correo);   
+        console.log(campos.curp);   
+        console.log(campos.direccion);     
+        console.log(campos.materno);   
+        console.log(campos.telefono);   
+        console.log(campos.nacimiento); 
+        console.log("No se envia");
         e.preventDefault();
         /*document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');*/
     }
 });
 
 //Funciones
+
+
 //Validacion de identidad
 // Valida que se haya seleccionado una alcaldia 
-function validarForm() {
-    var optForm = document.forms["formulario"]["alcaldia"].selectedIndex;
+function validarSelect(select, campo) {
+     if (select.value=='0') {
+        document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+        campos[campo] = false;   
+     }else{
+        document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+        campos[campo] = true;
+     }
+    /*var optForm = document.forms["formulario"]["alcaldia"].selectedIndex;
     if (optForm == null || optForm == 0) {
         alert("Debe seleccionar una opción en el campo 'Alcadia'");
         return false;
-    }
+    }*/
 }
 
 //Validaciones de procedencia
