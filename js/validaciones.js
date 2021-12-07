@@ -14,7 +14,8 @@ const expresiones = {
     telefono: /^\d{10}$/,
     CP: /^(\d{5})$/,
     correo: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
-    promedio: /^(10+\.\d\d)|([6-9]+\.\d\d)$/
+    promedio: /^(10+\.\d\d)|([6-9]+\.\d\d)$/,
+    escuelaProcedencia:/^[a-zA-ZÀ-ÿ\s]{3,30}$/
 }
 const campos = {
     boleta: false,
@@ -29,7 +30,11 @@ const campos = {
     CP: false,
     telefono: false,
     correo: false,
-    alcaldia: false
+    alcaldia: false,
+    escuela: false,
+    entidad: false,
+    promedio: false,
+    nomescuela:false
 
 }
 const validarIdentidad = (e) => {
@@ -77,6 +82,17 @@ const validarIdentidad = (e) => {
         case "alcaldia":
                 validarSelect(e.target, e.target.name);
             break;
+        case "escuela":
+                validarSelect(e.target, e.target.name);
+            break;
+        case "entidad":
+                validarSelect(e.target, e.target.name);
+            break;
+        case "nomescuela":
+                console.log(e.target.value)
+                validarCampos(expresiones.escuelaProcedencia, e.target, e.target.name);
+            break;
+
 
     }
 }
@@ -112,18 +128,17 @@ inputs.forEach((input) => {
 //cada vez que se precione una tecla o se deje de escrbir en el campo se ejecuta esto
 selects.forEach((select) => {
     select.addEventListener('click', validarIdentidad);
-    select.addEventListener('change', validarIdentidad);
+    //select.addEventListener('change', validarIdentidad);
 })
 formulario.addEventListener('submit', (e) => {
     
+
     
-
-
-    const alcaldia = document.getElementById('alcaldia');
-
     if (campos.nombre && campos.paterno && campos.CP && campos.alcaldia && campos.boleta && campos.colonia 
         && campos.correo && campos.curp && campos.direccion && campos.materno && campos.telefono
-        && campos.nacimiento && campos.alcaldia) {
+        && campos.nacimiento && campos.alcaldia && campos.alcaldia && campos.entidad && campos.promedio
+        && (campos.escuela || campos.nomescuela)) {
+ 
         console.log(campos.nombre);   
         console.log(campos.paterno);   
         console.log(campos.CP);   
@@ -136,11 +151,15 @@ formulario.addEventListener('submit', (e) => {
         console.log(campos.materno);   
         console.log(campos.telefono);   
         console.log(campos.nacimiento);    
+        console.log(campos.entidad);    
+        console.log(campos.promedio);    
+        console.log(campos.escuela); 
+        console.log(campos.nomescuela);     
         console.log("Se envia");
-        e.submit();
-        /*formulario.reset();
+        
+        formulario.reset();
 
-        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+        /*document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
         setTimeout(() => {
             document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
         }, 5000);
@@ -157,10 +176,14 @@ formulario.addEventListener('submit', (e) => {
         console.log(campos.colonia);   
         console.log(campos.correo);   
         console.log(campos.curp);   
-        console.log(campos.direccion);     
+        console.log(campos.direccion);       
         console.log(campos.materno);   
         console.log(campos.telefono);   
-        console.log(campos.nacimiento); 
+        console.log(campos.nacimiento);    
+        console.log(campos.entidad);    
+        console.log(campos.promedio);    
+        console.log(campos.escuela);  
+        console.log(campos.nomescuela); 
         console.log("No se envia");
         e.preventDefault();
         /*document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');*/
@@ -197,7 +220,7 @@ function showNomEsc(selected) {
 }
 
 // Valida que se hayan seleccionado tanto la escuela de procedencia como la entidad federativa
-function validarSelecciones() {
+/*function validarSelecciones() {
     var optEsc = document.forms["formulario"]["escuela"].selectedIndex;
     if (optEsc == null || optEsc == 0) {
         alert("Debe seleccionar una opción en el campo 'Escuela de procedencia'");
@@ -219,9 +242,9 @@ function validarSelecciones() {
     if (verificarOptESCOM == null || verificarOptESCOM == '') {
         alert("Debe seleccionar una opción en el campo 'ESCOM fue tu opción:'");
         return false;
-    }*/
+    }
     //return true;
-}
+}*/
 
 
 /*//Validaciones de campos vacios

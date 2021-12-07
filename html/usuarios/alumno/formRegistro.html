@@ -145,22 +145,22 @@
                         <div class="input-field col s12" id="grupo_alcaldia" r>
                             <select  name="alcaldia" id="alcaldia" class="browser-default" required>
                                 <option value="0" disabled selected>-- Seleccione una --</option>
-                                <option value="AlvOb">&Aacute;lvaro Obreg&oacute;n</option>
-                                <option value="Azca">Azcapotzalco</option>
-                                <option value="BenJu">Benito Ju&aacute;rez</option>
-                                <option value="Coyo">Coyoac&aacute;n</option>
-                                <option value="Cuaji">Cuajimalpa</option>
-                                <option value="Cuau">Cuauht&eacute;moc</option>
-                                <option value="GAM">Gustavo A. Madero</option>
-                                <option value="Iztaca">Iztacalco</option>
-                                <option value="Iztapa">Iztapalapa</option>
-                                <option value="MagCon">Magdalena Contreras</option>
-                                <option value="MigHid">Miguel Hidalgo</option>
-                                <option value="MilpAlt">Milpa Alta</option>
-                                <option value="Tla">Tl&aacute;huac</option>
-                                <option value="Tlal">Tlalpan</option>
-                                <option value="VenCarr">Venustiano Carranza</option>
-                                <option value="Xochi">Xochimilco</option>
+                                <option value="Álvaro Obregón">&Aacute;lvaro Obreg&oacute;n</option>
+                                <option value="Azcapotzalco">Azcapotzalco</option>
+                                <option value="Benito Juárez">Benito Ju&aacute;rez</option>
+                                <option value="Coyoacán">Coyoac&aacute;n</option>
+                                <option value="Cuajimalpa ">Cuajimalpa</option>
+                                <option value="Cuauhtémoc">Cuauht&eacute;moc</option>
+                                <option value="Gustavo A. Madero">Gustavo A. Madero</option>
+                                <option value="Iztacalco">Iztacalco</option>
+                                <option value="Iztapalapa">Iztapalapa</option>
+                                <option value="Magdalena Contreras">Magdalena Contreras</option>
+                                <option value="Miguel Hidalgo">Miguel Hidalgo</option>
+                                <option value="Milpa Alta">Milpa Alta</option>
+                                <option value="Tláhuac">Tl&aacute;huac</option>
+                                <option value="Tlalpan">Tlalpan</option>
+                                <option value="Venustiano Carranza">Venustiano Carranza</option>
+                                <option value="Xochimilco">Xochimilco</option>
                                 
                             </select>
                             <p class="formulario__input-error">Seleccione una alcaldia</p>
@@ -200,39 +200,41 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <script src="../../../js/ValProcedencia.js"></script>
+                        <div class="input-field col s12" id="grupo_escuela">
+                            <!--<script src="../../../js/ValProcedencia.js"></script>-->
                             <select name="escuela" id="escuela" class="browser-default" onchange="showNomEsc(this)" required>
                                 <option value="0" disabled selected>--Selecciona una --</option>
-                                <option value="cecyt1">CECyT 1 “Gonzalo V&aacute;zquez Vela”</option>
-                                <option value="cecyt2">CECyT 2 "Miguel Bernard Perales"</option>
-                                <option value="cecyt3">CECyT 3 "Estanislao Ramirez Ru&iacute;z"</option>
-                                <option value="cecyt4">CECyT 4 "L&aacute;zaro C&aacute;rdenas"</option>
-                                <option value="cecyt5">CECyT 5 "Benito Ju&aacute;rez Garc&iacute;a"</option>
-                                <option value="cecyt6">CECyT 6 "Miguel Oth&oacute;n de Mendiz&aacute;bal"</option>
-                                <option value="cecyt7">CECyT 7 "Cuauht&eacute;moc"</option>
-                                <option value="cecyt8">CECyT 8 "Narciso Bassols Garc&iacute;a"</option>
-                                <option value="cecyt9">CECyT 9 "Juan de Dios B&aacute;tiz"</option>
-                                <option value="cecyt10">CECyT 10 "Carlos Vallejo M&aacute;rquez"</option>
-                                <option value="cecyt11">CECyT 11 "Wilfrido Massieu P&eacute;rez"</option>
-                                <option value="cecyt12">CECyT 12 "Jos&eacute; Mar&iacute;a Morelos y Pav&oacute;n"</option>
-                                <option value="cecyt13">CECyT 13 "Ricardo Flores Mag&oacute;n"</option>
-                                <option value="cecyt14">CECyT 14 "Luis Enrique Erro"</option>
-                                <option value="cecyt15">CECyT 15 "Di&oacute;doro Ant&uacute;nez Echegaray"</option>
-                                <option value="cecyt16">CECyT 16 "Hidalgo"</option>
-                                <option value="cecyt17">CECyT 17 "Le&oacute;n, Guanajuato"</option>
-                                <option value="cecyt18">CECyT 18 "Zacatecas"</option>
-                                <option value="cecyt19">CECyT 19 “Leona Vicario”</option>
-                                <option value="cet1">CET 1 “Walter Cross Buchanan”</option>
+                                <option value="CECyT 1">CECyT 1 “Gonzalo V&aacute;zquez Vela”</option>
+                                <option value="CECyT 2">CECyT 2 "Miguel Bernard Perales"</option>
+                                <option value="CECyT 3">CECyT 3 "Estanislao Ramirez Ru&iacute;z"</option>
+                                <option value="CECyT 4">CECyT 4 "L&aacute;zaro C&aacute;rdenas"</option>
+                                <option value="CECyT 5">CECyT 5 "Benito Ju&aacute;rez Garc&iacute;a"</option>
+                                <option value="CECyT 6">CECyT 6 "Miguel Oth&oacute;n de Mendiz&aacute;bal"</option>
+                                <option value="CECyT 7">CECyT 7 "Cuauht&eacute;moc"</option>
+                                <option value="CECyT 8">CECyT 8 "Narciso Bassols Garc&iacute;a"</option>
+                                <option value="CECyT 9">CECyT 9 "Juan de Dios B&aacute;tiz"</option>
+                                <option value="CECyT 10">CECyT 10 "Carlos Vallejo M&aacute;rquez"</option>
+                                <option value="CECyT 11">CECyT 11 "Wilfrido Massieu P&eacute;rez"</option>
+                                <option value="CECyT 12">CECyT 12 "Jos&eacute; Mar&iacute;a Morelos y Pav&oacute;n"</option>
+                                <option value="CECyT 13">CECyT 13 "Ricardo Flores Mag&oacute;n"</option>
+                                <option value="CECyT 14">CECyT 14 "Luis Enrique Erro"</option>
+                                <option value="CECyT 15">CECyT 15 "Di&oacute;doro Ant&uacute;nez Echegaray"</option>
+                                <option value="CECyT 16">CECyT 16 "Hidalgo"</option>
+                                <option value="CECyT 17">CECyT 17 "Le&oacute;n, Guanajuato"</option>
+                                <option value="CECyT 18">CECyT 18 "Zacatecas"</option>
+                                <option value="CECyT 19">CECyT 19 “Leona Vicario”</option>
+                                <option value="CET 1">CET 1 “Walter Cross Buchanan”</option>
                                 <option value="oo">Otra Opci&oacute;n</option>
                             </select>
+                            <p class="formulario__input-error">Seleccione su escuela de procedencia</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
+                        <div class="input-field col s12" id="grupo_nomescuela">
                             <span id="innomescuela" style="display:none">
-                                <input type="text" id="nomescuela" class="validate" >
+                                <input type="text" id="nomescuela" name="nomescuela" class="validate" >
                                 <label for="nomescuela">Nombre de la escuela*: </label>
+                                <p class="formulario__input-error">Escribe el nombre de tu escuela</p>
                             </span>
                         </div>
                     </div>
@@ -242,43 +244,44 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
-                            <select id="entidad"name="entidad" class="browser-default" required>
+                        <div class="input-field col s12" id="grupo_entidad"> 
+                            <select id="entidad" name="entidad" class="browser-default" required>
                                 <option value="0" disabled selected>--Selecciona una --</option>
-                                <option value="uno">Aguascalientes</option>
-                                <option value="dos">Baja California</option>
-                                <option value="tres">Baja California Sur</option>
-                                <option value="cuatro">Campeche</option>
-                                <option value="cinco">Coahuila</option>
-                                <option value="seis">Colima</option>
-                                <option value="siete">Chiapas</option>
-                                <option value="ocho">Chihuahua</option>
-                                <option value="nueve">Durango</option>
-                                <option value="diez">Ciudad de M&eacute;xico</option>
-                                <option value="once">Guanajuato</option>
-                                <option value="doce">Guerrero</option>
-                                <option value="trece">Hidalgo</option>
-                                <option value="catorce">Jalisco</option>
-                                <option value="quice">Michoac&aacute;n</option>
+                                <option value="Aguascalientes">Aguascalientes</option>
+                                <option value="Baja California">Baja California</option>
+                                <option value="Baja California Sur">Baja California Sur</option>
+                                <option value="Campeche">Campeche</option>
+                                <option value="Coahuila">Coahuila</option>
+                                <option value="Colima">Colima</option>
+                                <option value="Chiapas">Chiapas</option>
+                                <option value="Chihuahua">Chihuahua</option>
+                                <option value="Durango">Durango</option>
+                                <option value="Ciudad de México">Ciudad de M&eacute;xico</option>
+                                <option value="Guanajuato">Guanajuato</option>
+                                <option value="Guerrero">Guerrero</option>
+                                <option value="Hidalgo">Hidalgo</option>
+                                <option value="Jalisco">Jalisco</option>
+                                <option value="Michoacán">Michoac&aacute;n</option>
                                 <option value="dieciseis">Morelos</option>
-                                <option value="diecisiete">Estado de M&eacute;xico</option>
-                                <option value="dieciocho">Nayarit</option>
-                                <option value="diecinueve">Nuevo Le&oacute;n</option>
-                                <option value="veinte">Oaxaca</option>
-                                <option value="veintiuno">Puebla</option>
-                                <option value="veintidos">Quer&eacute;taro</option>
-                                <option value="veintitres">Quintana Roo</option>
-                                <option value="veinticuatro">San Luis Potos&iacute;</option>
-                                <option value="veinticinco">Sinaloa</option>
-                                <option value="veintiseis">Sonora</option>
-                                <option value="veintisiete">Tabasco</option>
-                                <option value="veintiocho">Tamaulipas</option>
-                                <option value="veintinueve">Tlaxcala</option>
-                                <option value="treinta">Veracruz</option>
-                                <option value="treintayuno">Yucat&aacute;</option>
-                                <option value="treintaydos">Zacatecas</option>
+                                <option value="Estado de México">Estado de M&eacute;xico</option>
+                                <option value="Nayarit">Nayarit</option>
+                                <option value="Nuevo León">Nuevo Le&oacute;n</option>
+                                <option value="Oaxaca">Oaxaca</option>
+                                <option value="Puebla">Puebla</option>
+                                <option value="Querétaro">Quer&eacute;taro</option>
+                                <option value="Quintana Roo">Quintana Roo</option>
+                                <option value="San Luis Potosí">San Luis Potos&iacute;</option>
+                                <option value="Sinaloa">Sinaloa</option>
+                                <option value="Sonora">Sonora</option>
+                                <option value="Tabasco">Tabasco</option>
+                                <option value="Tamaulipas">Tamaulipas</option>
+                                <option value="Tlaxcala">Tlaxcala</option>
+                                <option value="Veracruz">Veracruz</option>
+                                <option value="Yucatán">Yucat&aacute;</option>
+                                <option value="Zacatecas">Zacatecas</option>
         
                             </select>
+                            <p class="formulario__input-error">Seleccione su entidad federativa</p>
                         </div>
                     </div>
                     <div class="row">
