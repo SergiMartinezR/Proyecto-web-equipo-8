@@ -9,8 +9,8 @@ const expresiones = {
     materno: /^[a-zA-ZÀ-ÿ\s]{3,30}$/,
     nacimiento: /^(\d{4})(-)(0[1-9]|1[0-2])(-)([0-2][0-9])$/,
     curp: /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/, //formato del curp
-    direccion: /[a-zA-ZÀ-ÿ0-9\s]{5,30}$/,
-    colonia: /[a-zA-ZÀ-ÿ0-9\s]{5,30}$/,
+    direccion: /^[a-zA-ZÀ-ÿ0-9\s]{1,15}\,\s[\d]{1,4}$/,
+    colonia: /^[a-zA-ZÀ-ÿ0-9\s]{5,30}$/,
     telefono: /^\d{10}$/,
     CP: /^(\d{5})$/,
     correo: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
@@ -125,14 +125,12 @@ inputs.forEach((input) => {
     input.addEventListener('blur', validarIdentidad);
 })
 
-//cada vez que se precione una tecla o se deje de escrbir en el campo se ejecuta esto
+//cada vez que se precione un select se ejecuta esto
 selects.forEach((select) => {
     select.addEventListener('click', validarIdentidad);
     //select.addEventListener('change', validarIdentidad);
 })
 formulario.addEventListener('submit', (e) => {
-    
-
     
     if (campos.nombre && campos.paterno && campos.CP && campos.alcaldia && campos.boleta && campos.colonia 
         && campos.correo && campos.curp && campos.direccion && campos.materno && campos.telefono
@@ -159,14 +157,6 @@ formulario.addEventListener('submit', (e) => {
         
         formulario.reset();
 
-        /*document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-        setTimeout(() => {
-            document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-        }, 5000);
-
-        document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-            icono.classList.remove('formulario__grupo-correcto');
-        });*/
     } else {
         console.log(campos.nombre);   
         console.log(campos.paterno);   
@@ -247,7 +237,7 @@ function showNomEsc(selected) {
 }*/
 
 
-/*//Validaciones de campos vacios
+//Validaciones de campos vacios
 var nombre = document.getElementById('nombre');
 var boleta = document.getElementById('boleta');
 var apePat = document.getElementById('paterno');
@@ -255,8 +245,8 @@ var apeMate = document.getElementById('materno');
 var nacimiento = document.getElementById('nacimiento');
 var genero = document.getElementById('genero');
 var curp = document.getElementById('curp');
-var dir1 = document.getElementById('dir1');
-var col = document.getElementById('col');
+var dir1 = document.getElementById('direccion');
+var col = document.getElementById('colonia');
 var alcaldia = document.getElementById('alcaldia');
 var CP = document.getElementById('CP');
 var tel = document.getElementById('tel');
@@ -271,8 +261,7 @@ var error = document.getElementById('error');
 error.style.color = "red";
 
 //Muestra un mensaje con los lementos que no se han respondido
-var form = document.getElementById('formulario');
-form.addEventListener('submit', function (evt) {
+formulario.addEventListener('submit', function (evt) {
     evt.preventDefault();
     var mensajesError = [];
     if (nombre.value === null || nombre.value === '') {
@@ -335,4 +324,4 @@ form.addEventListener('submit', function (evt) {
 
     error.innerHTML = mensajesError.join(', ');
 
-});*/
+});
