@@ -51,7 +51,7 @@
                     <legend>Identidad </legend>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_boleta">
-                            <input type="text" id="boleta" size="10" name="boleta" maxlength="10" class="validate" >
+                            <input type="text" id="boleta" size="10" name="boleta" maxlength="10"  >
                             <label for="boleta">No. de Boleta*:</label>
                             <p class="formulario__input-error">Esa boleta no existe</p>
                         </div>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="row" >
                         <div class="input-field col s12" id="grupo_nombre">
-                            <input type="text" id="nombre" size="30" name="nombre" class="validate" >
+                            <input type="text" id="nombre" size="30" name="nombre"  >
                             <label for="nombre" >Nombre*:</label>
                             <p class="formulario__input-error">El nombre solo puede contener letras</p>
                         </div>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_paterno">
-                            <input type="text" id="paterno" size="20" name="paterno"class="validate" >
+                            <input type="text" id="paterno" size="20" name="paterno" >
                             <label for="apePat">Apellido Paterno*:</label>
                             <p class="formulario__input-error">El apellido paterno solo puede contener letras</p>
                         </div>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_materno">
-                            <input type="text" id="materno" size="20" name="materno"class="validate" >
+                            <input type="text" id="materno" size="20" name="materno" >
                             <label for="apeMate">Apellido Materno:*</label>
                             <p class="formulario__input-error">El apellido materno solo puede contener letras</p>
                         </div>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_nacimiento">
-                            <input type="date" id="nacimiento" name="nacimiento" class="validate" >
+                            <input type="date" id="nacimiento" name="nacimiento"  >
                             <label for="nacimiento">Fecha de Nacimiento*:</label>
                             <p class="formulario__input-error">El formato de la fecha no es el siguiente: dd/mm/aaaa</p>
                         </div>
@@ -111,7 +111,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_curp">
-                            <input type="text" id="curp" size="20"  minlength="18" maxlength="18" name="curp" class="validate" >
+                            <input type="text" id="curp" size="20"  minlength="18" maxlength="18" name="curp"  >
                             <label for="curp">CURP*:</label>
                             <p class="formulario__input-error">El CURP no existe</p>
                         </div>
@@ -124,14 +124,14 @@
                     <legend>Contacto</legend>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_direccion">
-                            <input type="text" id="direccion" name="direccion" class="validate" >
+                            <input type="text" id="direccion" name="direccion"  >
                             <label for="direccion">Calle y número*: </label>
-                            <p class="formulario__input-error">Calle y número invalidos</p>
+                            <p class="formulario__input-error">Debe de tener el siguiente formato calle, numero: ej. Republica de Argentina, 36 </p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_colonia">
-                            <input type="text" id="colonia" name="colonia" class="validate" >
+                            <input type="text" id="colonia" name="colonia"  >
                             <label for="colonia">Colonia*: </label>
                             <p class="formulario__input-error">Colonia invalida</p>
                         </div>
@@ -168,7 +168,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_CP">
-                            <input type="number" id="CP" name="CP" size="5" maxlength="5" class="validate" >
+                            <input type="number" id="CP" name="CP" size="5" maxlength="5"  >
                             <label for="CP">C&oacute;digo Postal*: </label>
                             <p class="formulario__input-error">Codigo Postal invalido (Recuerde que debe contener 5 números)</p>
                         </div>
@@ -176,7 +176,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_telefono">
-                            <input type="number" id="telefono" name="telefono" size="10" maxlength="10" class="validate" >
+                            <input type="number" id="telefono" name="telefono" size="10" maxlength="10"  >
                             <label for="tel">Tel&eacute;fono celular*: </label>
                             <p class="formulario__input-error">Telefono o celular invalido. *Recuerde que el telefono debe conter 10 números</p>
                         </div>
@@ -184,7 +184,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_correo">
-                            <input type="text" id="correo" name="correo" class="validate" >
+                            <input type="text" id="correo" name="correo" >
                             <label for="correo">Correo electr&oacute;nico*: </label>
                             <p class="formulario__input-error">Correo Invalido * Ejemplo: perez123@gmail.com</p>
                         </div>
@@ -232,7 +232,7 @@
                     <div class="row">
                         <div class="input-field col s12" id="grupo_nomescuela">
                             <span id="innomescuela" style="display:none">
-                                <input type="text" id="nomescuela" name="nomescuela" class="validate" >
+                                <input type="text" id="nomescuela" name="nomescuela"  >
                                 <label for="nomescuela">Nombre de la escuela*: </label>
                                 <p class="formulario__input-error">Escribe el nombre de tu escuela</p>
                             </span>
@@ -286,7 +286,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_promedio">
-                            <input type="number" id="promedio" name="promedio" step="0.01" min="0" max="10" class="validate" >
+                            <input type="number" id="promedio" name="promedio" step="0.01" min="0" max="10"  >
                             <label for="promedio">Promedio*: </label>
                             <p class="formulario__input-error">Promedio incorrecto, debe ser un n&uacute;mero entre 6 y 10 con 2 decimales </p>
                         </div>
@@ -348,7 +348,7 @@
                 </div>
             </form>
             <div class="formulario__mensaje" id="formulario__mensaje">
-                <p>Ingrese su: </p>
+                <p><FONT COLOR="red">Ingrese su: </FONT></p>
 				<div id='error'></div> 
 			</div>
             

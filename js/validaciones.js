@@ -237,39 +237,33 @@ formulario.addEventListener('submit', (e) => {
         if (nacimiento.value === null || nacimiento.value === '') {
             mensajesError.push('Fecha de nacimiento');
         }
-        if (genero.value === null || genero.value === '') {
-            mensajesError.push('Genero');
-        }
         if (curp.value === null || curp.value === '') {
             mensajesError.push('Curp');
         }
         if (dir1.value === null || dir1.value === '') {
             mensajesError.push('Calle y numero');
         }
-        if (col.value === null || col.value === '') {
+        if (col.value === null || col.value === ''|| col.value === "0") {
             mensajesError.push('Colonia');
         }
-        if (alcaldia.value === null || alcaldia.value === '') {
+        if (alcaldia.value === null || alcaldia.value === '' || alcaldia.value === "0") {
             mensajesError.push('Alcaldia');
         }
 
         if (CP.value === null || CP.value === '') {
-            mensajesError.push('Codigo postal');
+            mensajesError.push('Código postal');
         }
         if (tel.value === null || tel.value === '') {
-            mensajesError.push('Telefono');
+            mensajesError.push('Teléfono');
         }
         if (correo.value === null || correo.value === '') {
             mensajesError.push('Correo');
         }
-        if (escuela.value === null || escuela.value === '') {
+        if ((escuela.value === null || escuela.value === ''||escuela.value === "0"||escuela.value === "oo") && (nomescuela.value === null || nomescuela.value === '')) {
             mensajesError.push('Escuela de procedencia');
         }
-        if (entidad.value === null || entidad.value === '') {
+        if (entidad.value === null || entidad.value === ''|| entidad.value === "0") {
             mensajesError.push('Entidad federativa');
-        }
-        if (nomescuela.value === null || nomescuela.value === '') {
-            mensajesError.push('Escuela de procedencia');
         }
         if (promedio.value === null || promedio.value === '') {
             mensajesError.push('Promedio');
@@ -277,7 +271,7 @@ formulario.addEventListener('submit', (e) => {
         if (escomopcion.value === null || escomopcion.value === '') {
             mensajesError.push('Opcion de ESCOM');
         }
-        //el formulario se envia
+        
 
         error.innerHTML = mensajesError.join(', ');
 
