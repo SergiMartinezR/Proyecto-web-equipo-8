@@ -36,7 +36,7 @@ const expresiones = {
     telefono: /^\d{10}$/,
     CP: /^(\d{5})$/,
     correo: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
-    promedio: /^(10+\.\d\d)|([6-9]+\.\d\d)$/,
+    promedio: /^(10.00)|([6-9]+\.\d\d)$/,
     escuelaProcedencia: /^[a-zA-ZÀ-ÿ\s]{3,30}$/
 }
 const campos = {
