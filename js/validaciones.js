@@ -184,7 +184,7 @@ formulario.addEventListener('submit', (e) => {
         //pone el campo en verde
         document.getElementById("formulario__mensaje").classList.remove('formulario__mensaje-activo');
 
-        redirect('../../../php/registro.php', 'post');//manda los datos del formulario al url y por el metodo post
+        redirect('../../../php/verfDatos.php', 'post');//manda los datos del formulario al url y por el metodo post
         //formulario.reset();
 
     } else {

@@ -1,24 +1,24 @@
 <?php
 include("con_db.php"); //conexion con la base de datos
 //datos del formulario
-$boleta = trim($_POST['boleta']);
-$nombre = trim($_POST['nombre']);
-$paterno = trim($_POST['paterno']);
-$materno = trim($_POST['materno']);
-$nacimiento = trim($_POST['nacimiento']);
-$genero = trim($_POST['SelecGenero']);
-$curp = trim($_POST['curp']);
-$direccion = trim($_POST['direccion']);
-$colonia = trim($_POST['colonia']);
-$alcaldia = trim($_POST['alcaldia']);
-$CP = trim($_POST['CP']);
-$telefono = trim($_POST['telefono']);
-$correo = trim($_POST['correo']);
-$escuela = trim($_POST['escuela']);
-$otraEscuela=trim($_POST['nomescuela']);
-$entidad = trim($_POST['entidad']);
-$promedio = trim($_POST['promedio']);
-$escomopcion = trim($_POST['escomopcion']);
+session_start();
+$boleta = $_SESSION['boleta'];
+$nombre = $_SESSION['nombre'];
+$paterno = $_SESSION['paterno'];
+$materno = $_SESSION['materno'];
+$nacimiento = $_SESSION['nacimiento'];
+$genero = $_SESSION['genero'];
+$curp = $_SESSION['curp'];
+$direccion = $_SESSION['direccion'];
+$colonia = $_SESSION['colonia'];
+$alcaldia = $_SESSION['alcaldia'];
+$CP = $_SESSION['CP'];
+$telefono = $_SESSION['telefono'];
+$correo = $_SESSION['correo'];
+$escuela = $_SESSION['escuelaFinal'];
+$entidad = $_SESSION['entidad'];
+$promedio = $_SESSION['promedio'];
+$escomopcion = $_SESSION['escomopcion'];
 //variables para la asignacion de laboratorios
 $NLaboratorio;
 $NHorario;
@@ -60,34 +60,86 @@ echo $telefono;
 echo $correo;
 echo $escuela;
 echo $entidad;
-echo $otraEscuela;
 echo $promedio;
 echo $escomopcion;*/
 
 
-//INSERT a la base
-if($escuela=="oo"){
-    $consulta = "INSERT INTO alumno(boleta, nombre, paterno, materno, nacimiento, genero, 
-    curp, calleNum, colonia, alcaldia, cp, telefono, correo, escuelap, entidadF, promedio, 
-    escomOpcion, horario, salon) VALUES ('$boleta','$nombre','$paterno','$materno','$nacimiento','$genero',
-    '$curp','$direccion','$colonia','$alcaldia','$CP','$telefono','$correo','$otraEscuela','$entidad','$promedio',
-    '$escomopcion','10:30','Lab 1')";
-}else{
-    $consulta = "INSERT INTO alumno(boleta, nombre, paterno, materno, nacimiento, genero, 
+$consulta = "INSERT INTO alumno(boleta, nombre, paterno, materno, nacimiento, genero, 
     curp, calleNum, colonia, alcaldia, cp, telefono, correo, escuelap, entidadF, promedio, 
     escomOpcion, horario, salon) VALUES ('$boleta','$nombre','$paterno','$materno','$nacimiento','$genero',
     '$curp','$direccion','$colonia','$alcaldia','$CP','$telefono','$correo','$escuela','$entidad','$promedio',
-    '$escomopcion','10:30','Lab 1')";
-}
+    '$escomopcion','$NHorario','$NLaboratorio')";
 
-
-/*
 
 $resultado= mysqli_query($conex, $consulta);
 
 if($resultado){
-    echo "<h3> Registro Exitoso</h3>";
+    echo "<!DOCTYPE HTML 
+    PUBLIC '- / / W3C/ / DTD XHTML 1.0 Transitional / / EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+    <html xmlns='http://www.w3.org/1999/xhtml'>
+
+    <head>
+        <meta http-equiv='content-type' content='text/html; charset=utf-8' />
+        <title>.: Mensaje :.</title>
+        <link rel='stylesheet' href='../css/validacion.css'  type='text/css'>
+        <!-- Compiled and minified CSS -->
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'>
+
+        <!-- Compiled and minified JavaScript -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script>
+        
+        <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+    </head>
+    <body>
+        <!--Barra de navegacion-->
+        <nav class='nav-wrapper blue darken-3' role='navigation'>
+            <div class='nav-wrapper container'>
+                <a id='logo-container' href='../../../index.html' class='brand-logo white-text'><img
+                        src='../../../recursos/logoESCOMIPN.png' width='85%'' height='85%'></a>
+                <ul class='right hide-on-med-and-down'>
+                    <li><a href='html/usuarios/alumno/formRegistro.html' class='white-text'>Registrarse</a></li>
+                    <li><a href='#' class='white-text'>Iniciar Sesión</a></li>
+                </ul>
+
+                <ul id='nav-mobile' class='sidenav blue darken-4'>
+                    <li><a href='#' class='white-text'>Iniciar Sesión</a></li>
+                    <li><a href='formRegistro.html' class='white-text'>Registrarse</a></li>
+                </ul>
+                <a href='#' data-target='nav-mobile' class='sidenav-trigger  white-text'><i
+                        class='material-icons'>menu</i></a>
+            </div>
+        </nav>
+        <div class='container'>
+        <h1><center>Los datos fueron almacenados correctamente.</center></h1>       
+        <div class='row'>
+                <div class='row'>
+                    <div class='col s3'></div>
+                    <div class='col s3'></div>
+                    <div class='col s2'></div>
+                    <div class='col s2'>
+                        <a class='guinda-btn' href='../index.html'>Regresar</a> 
+                    </div>
+                    <div class='col s2'>
+                        <a class='azul-btn' href='pdf.php'>Imprimir Comprobante</a> 
+                    </div>
+                </div>
+      </div>
+    </body>
+    </html>";
 }else{
-    echo "<h3> Sucedio un error</h3>";
-}*/
+    echo "<!DOCTYPE HTML 
+    PUBLIC '- / / W3C/ / DTD XHTML 1.0 Transitional / / EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+    <html xmlns='http://www.w3.org/1999/xhtml'>
+
+    <head>
+        <meta http-equiv='content-type' content='text/html; charset=utf-8' />
+        <title>.: Mensaje :.</title>
+    </head>
+    <body>
+        <h1><center>Ha sucedido un error.</center></h1>
+    </body>
+    </html>";
+}
+
+session_destroy();//destruir todas las sesiones
 ?>
