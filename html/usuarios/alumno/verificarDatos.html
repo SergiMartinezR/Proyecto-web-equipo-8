@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Barra de navegacion-->
+    <nav class="nav-wrapper blue darken-3" role="navigation">
+        <div class="nav-wrapper container ">
+            <a id="logo-container" href="../../../index.html" class="brand-logo white-text"><img
+                    src="../../../recursos/logoESCOMIPN.png" width="85%" height="85%"></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="html/usuarios/alumno/formRegistro.html" class="white-text">Registrarse</a></li>
+                <li><a href="#" class="white-text">Iniciar Sesión</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav blue darken-4">
+                <li><a href="#" class="white-text">Iniciar Sesión</a></li>
+                <li><a href="formRegistro.html" class="white-text">Registrarse</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger  white-text"><i
+                    class="material-icons">menu</i></a>
+        </div>
+    </nav>
+    <!--Cierre de la barra de navegacion-->
+    <div class="container">
+        <form action="">
+            <button class="btn waves-effect  colorGuinda1 right" type="button" name="limpiar">Modificar</button>
+            <button class="btn waves-effect  colorGuinda1 right" type="button" name="limpiar">Aceptar</button>
+        </form>
+    </div>
+    <?php
+        include("../../../php/registro.php");
+    ?>
+</body>
+
+</html>

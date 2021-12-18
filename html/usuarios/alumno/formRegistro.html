@@ -41,7 +41,7 @@
     <div class="container">
         <div class="row">
             <!---Inicio del formulario-->
-            <form action="Mensaje.html" class="col s12"  id="formulario" name="formulario" method="post">
+            <form action="../../../php/registro.php" class="col s12"  id="formulario" name="formulario" method="post">
                 <div class="row">
                     <div class="input-field col s12" >
                         <p  class="pink-text text-darken-4">Recuerde: (*) El campo es obligatorio</p>
@@ -97,13 +97,13 @@
                         <div class="input-field col s12" id="genero">
                             <p>
                                 <label>
-                                    <input name="SelecGenero" type="radio" id="SelecM"  checked/>
+                                    <input name="SelecGenero" type="radio" id="SelecM"  value="Masculino" checked/>
                                     <span>Masculino</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input name="SelecGenero" type="radio" id="SelecF" />
+                                    <input name="SelecGenero" type="radio" id="SelecF" value="Femenino"/>
                                     <span>Femenino</span>
                                 </label>
                             </p>
@@ -300,25 +300,25 @@
                         <div class="input-field col s12">
                             <p>
                                 <label>
-                                  <input type="radio" id="escomopcion" value="opcion" name="opc" checked/>
+                                  <input type="radio" id="escomopcion" value="1" name="escomopcion" checked/>
                                   <span>Primera opci&oacute;n</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                  <input type="radio" id="escomopcion" value="opcion" name="opc"/>
+                                  <input type="radio" id="escomopcion" value="2" name="escomopcion"/>
                                   <span>Segunda opci&oacute;n</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                  <input type="radio" id="escomopcion" value="opcion" name="opc"/>
+                                  <input type="radio" id="escomopcion" value="3" name="escomopcion"/>
                                   <span>Tercera opci&oacute;n</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                  <input type="radio" id="escomopcion" value="opcion" name="opc"/>
+                                  <input type="radio" id="escomopcion" value="4" name="escomopcion"/>
                                   <span>Cuarta opci&oacute;n</span>
                                 </label>
                             </p>
@@ -357,6 +357,8 @@
     </div>
 
     <script src="../../../js/validaciones.js"></script><!--Para validar el formulario-->
+    
+    
     
 </body>
 

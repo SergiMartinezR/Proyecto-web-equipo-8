@@ -180,46 +180,15 @@ formulario.addEventListener('submit', (e) => {
         && campos.nacimiento && campos.alcaldia && campos.alcaldia && campos.entidad && campos.promedio
         && (campos.escuela || campos.nomescuela)) {
 
-        console.log(campos.nombre);
-        console.log(campos.paterno);
-        console.log(campos.CP);
-        console.log(campos.alcaldia);
-        console.log(campos.boleta);
-        console.log(campos.colonia);
-        console.log(campos.correo);
-        console.log(campos.curp);
-        console.log(campos.direccion);
-        console.log(campos.materno);
-        console.log(campos.telefono);
-        console.log(campos.nacimiento);
-        console.log(campos.entidad);
-        console.log(campos.promedio);
-        console.log(campos.escuela);
-        console.log(campos.nomescuela);
-        console.log("Se envia");
         document.getElementById("formulario__mensaje").classList.add('formulario__mensaje');
         //pone el campo en verde
         document.getElementById("formulario__mensaje").classList.remove('formulario__mensaje-activo');
-        formulario.reset();
+
+        redirect('../../../php/registro.php', 'post');//manda los datos del formulario al url y por el metodo post
+        //formulario.reset();
 
     } else {
-        console.log(campos.nombre);
-        console.log(campos.paterno);
-        console.log(campos.CP);
-        console.log(campos.alcaldia);
-        console.log(campos.boleta);
-        console.log(campos.colonia);
-        console.log(campos.correo);
-        console.log(campos.curp);
-        console.log(campos.direccion);
-        console.log(campos.materno);
-        console.log(campos.telefono);
-        console.log(campos.nacimiento);
-        console.log(campos.entidad);
-        console.log(campos.promedio);
-        console.log(campos.escuela);
-        console.log(campos.nomescuela);
-        console.log("No se envia");
+
         e.preventDefault();
         var mensajesError = [];
         if (boleta.value === null || boleta.value === '') {
@@ -282,8 +251,12 @@ formulario.addEventListener('submit', (e) => {
 });
 
 //Funciones
-
-
+//para mandar los datos del formulario
+var redirect = function(url, method) {
+    formulario.method = method;
+    formulario.action = url;
+    formulario.submit();
+};
 
 
 
