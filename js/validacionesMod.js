@@ -143,14 +143,20 @@ const validarCampos = (expresion, input, campo) => {
 }
 //cada vez que se precione una tecla o se deje de escrbir en el campo se ejecuta esto
 inputs.forEach((input) => {
+    input.addEventListener("mouseover", validarIdentidad);
+    input.addEventListener("click", validarIdentidad);
+    input.addEventListener("mouseout", validarIdentidad);
     input.addEventListener('keyup', validarIdentidad);
     input.addEventListener('blur', validarIdentidad);
+    input.addEventListener('mousemove', validarIdentidad);
 })
 
 //cada vez que se precione un select se ejecuta esto
 selects.forEach((select) => {
+    select.addEventListener("mouseover", validarIdentidad);
+    select.addEventListener("mouseout", validarIdentidad);
     select.addEventListener('click', validarIdentidad);
-    //select.addEventListener('change', validarIdentidad);
+    select.addEventListener('mousemove', validarIdentidad);
 })
 
 // Validacion de los select
@@ -201,7 +207,7 @@ formulario.addEventListener('submit', (e) => {
         //pone el campo en verde
         document.getElementById("formulario__mensaje").classList.remove('formulario__mensaje-activo');
 
-        redirect('../../../php/verfDatos.php', 'post');//manda los datos del formulario al url y por el metodo post
+        redirect('verfDatos.php', 'post');//manda los datos del formulario al url y por el metodo post
         //formulario.reset();
 
     } else {

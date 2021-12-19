@@ -29,6 +29,7 @@ $hora = array("08:30", "10:15", "11:30", "13:15");
 //existencias y asignacion de horarios y laboratorios
 for($i=0; $i<6; $i++ ){
     $existenciaLab="SELECT count(*) FROM alumno WHERE salon='$lab[$i]'";
+    echo $existenciaLab;
     if($existenciaLab[$i]<=30){
         $NLaboratorio=$lab[$i];
         $i=6;
@@ -37,6 +38,7 @@ for($i=0; $i<6; $i++ ){
 
 for($i=0; $i<4; $i++ ){
     $existenciaHora="SELECT count(*) FROM alumno WHERE horario='$hora[$i]'";
+    echo $existenciaHora;
     if($existenciaHora[$i]<=180){
         $NHorario=$hora[$i];
         $i=4;

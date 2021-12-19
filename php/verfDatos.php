@@ -97,7 +97,7 @@
                             name="modificar" >Modificar 
                             <i class="material-icons right">mode_edit</i>
                         </button>-->
-                        <a class="guinda-btn" href="nada.php">Modificar</a> 
+                        <a class="guinda-btn" href="formRegMod.php">Modificar</a> 
                     </div>
                     <div class="col s2">
                         <!---Boton para limpiar
