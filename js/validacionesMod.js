@@ -40,23 +40,23 @@ const expresiones = {
     escuelaProcedencia: /^[a-zA-ZÀ-ÿ0-9\s\.]{3,30}$/
 }
 const campos = {
-    boleta: false,
-    nombre: false,
-    paterno: false,
-    materno: false,
-    nacimiento: false,
-    curp: false,
-    direccion: false,
-    colonia: false,
-    alcaldia: false,
-    CP: false,
-    telefono: false,
-    correo: false,
-    alcaldia: false,
-    escuela: false,
-    entidad: false,
-    promedio: false,
-    nomescuela: false
+    boleta: true,
+    nombre: true,
+    paterno: true,
+    materno: true,
+    nacimiento: true,
+    curp: true,
+    direccion: true,
+    colonia: true,
+    alcaldia: true,
+    CP: true,
+    telefono: true,
+    correo: true,
+    alcaldia: true,
+    escuela: true,
+    entidad: true,
+    promedio: true,
+    nomescuela: true
 
 }
 const validarIdentidad = (e) => {
@@ -142,15 +142,15 @@ const validarCampos = (expresion, input, campo) => {
     }
 }
 //cada vez que se precione una tecla o se deje de escrbir en el campo se ejecuta esto
-inputs.forEach((input) => {
+inputs.forEach((input) => {  
     input.addEventListener('keyup', validarIdentidad);
     input.addEventListener('blur', validarIdentidad);
+    
 })
 
 //cada vez que se precione un select se ejecuta esto
 selects.forEach((select) => {
     select.addEventListener('click', validarIdentidad);
-    //select.addEventListener('change', validarIdentidad);
 })
 
 // Validacion de los select
@@ -201,7 +201,7 @@ formulario.addEventListener('submit', (e) => {
         //pone el campo en verde
         document.getElementById("formulario__mensaje").classList.remove('formulario__mensaje-activo');
 
-        redirect('../../../php/verfDatos.php', 'post');//manda los datos del formulario al url y por el metodo post
+        redirect('verfDatos.php', 'post');//manda los datos del formulario al url y por el metodo post
         //formulario.reset();
 
     } else {

@@ -65,3 +65,25 @@
   .colorEscom1:hover{
     background-color: #095378;
   }
+
+  .azul-btn {
+    background-color: #1591cf;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+  }
+
+  .azul-btn:hover {
+    background-color: #095378;
+  }
+
+  .guinda-btn {
+    background-color: #781c44;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+  }
+
+  .guinda-btn:hover {
+    background-color: #642424;
+  }
