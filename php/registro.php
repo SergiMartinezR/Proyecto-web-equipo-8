@@ -122,7 +122,8 @@ if($resultado){
                             <a class='guinda-btn' href='../index.html'>Regresar</a> 
                         </div>
                         <div class='col s5'>
-                            <a class='azul-btn' target='_blank' href='registroPDF.php'>Imprimir Comprobante</a> 
+                            <!--<a class='azul-btn' target='_blank' href='../recursos/registroPDF.php'>Imprimir Comprobante</a>-->
+                            <a class='azul-btn' target='_blank' href='../recursos/correo/email.php'>Imprimir Comprobante</a> 
                         </div>
                         <div class='col s2'></div>
                     </div>
