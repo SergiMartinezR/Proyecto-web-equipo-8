@@ -29,34 +29,34 @@ const expresiones = {
     nombre: /^[a-zA-ZÀ-ÿ\s]{3,30}$/,//puede llevar letras mayusculas y minusculas, con acento y espacios, de 3 a 30 caracteres
     paterno: /^[a-zA-ZÀ-ÿ\s]{3,30}$/,
     materno: /^[a-zA-ZÀ-ÿ\s]{3,30}$/,
-    nacimiento: /^(\d{4})(-)(0[1-9]|1[0-2])(-)([0-2][0-9])$/,
+    nacimiento: /^(20[0-1]\d{1}|2021|19[8-9]\d{1})(-)(0[1-9]|1[0-2])(-)([0-2][1-9]|[1-2]0|3[0-1])$/,
     curp: /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/, //formato del curp
-    direccion: /^[a-zA-ZÀ-ÿ0-9\s]{1,15}\,\s[\d]{1,4}$/,
+    direccion: /^[a-zA-ZÀ-ÿ0-9\s]{1,15}\s[\d]{1,4}$/,
     colonia: /^[a-zA-ZÀ-ÿ0-9\s]{5,30}$/,
     telefono: /^\d{10}$/,
     CP: /^(\d{5})$/,
     correo: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
-    promedio: /^(10.00)|([6-9]+\.\d\d)$/,
-    escuelaProcedencia: /^[a-zA-ZÀ-ÿ\s]{3,30}$/
+    promedio: /^((10.00)|([6-9]{1}\.\d\d))$/,
+    escuelaProcedencia: /^[a-zA-ZÀ-ÿ0-9\s\.]{3,30}$/
 }
 const campos = {
-    boleta: false,
-    nombre: false,
-    paterno: false,
-    materno: false,
-    nacimiento: false,
-    curp: false,
-    direccion: false,
-    colonia: false,
-    alcaldia: false,
-    CP: false,
-    telefono: false,
-    correo: false,
-    alcaldia: false,
-    escuela: false,
-    entidad: false,
-    promedio: false,
-    nomescuela: false
+    boleta: true,
+    nombre: true,
+    paterno: true,
+    materno: true,
+    nacimiento: true,
+    curp: true,
+    direccion: true,
+    colonia: true,
+    alcaldia: true,
+    CP: true,
+    telefono: true,
+    correo: true,
+    alcaldia: true,
+    escuela: true,
+    entidad: true,
+    promedio: true,
+    nomescuela: true
 
 }
 const validarIdentidad = (e) => {
@@ -142,21 +142,15 @@ const validarCampos = (expresion, input, campo) => {
     }
 }
 //cada vez que se precione una tecla o se deje de escrbir en el campo se ejecuta esto
-inputs.forEach((input) => {
-    input.addEventListener("mouseover", validarIdentidad);
-    input.addEventListener("click", validarIdentidad);
-    input.addEventListener("mouseout", validarIdentidad);
+inputs.forEach((input) => {  
     input.addEventListener('keyup', validarIdentidad);
     input.addEventListener('blur', validarIdentidad);
-    input.addEventListener('mousemove', validarIdentidad);
+    
 })
 
 //cada vez que se precione un select se ejecuta esto
 selects.forEach((select) => {
-    select.addEventListener("mouseover", validarIdentidad);
-    select.addEventListener("mouseout", validarIdentidad);
     select.addEventListener('click', validarIdentidad);
-    select.addEventListener('mousemove', validarIdentidad);
 })
 
 // Validacion de los select
@@ -231,53 +225,53 @@ formulario.addEventListener('submit', (e) => {
             console.log(campos.escuela);
             console.log(campos.nomescuela);
         var mensajesError = [];
-        if (boleta.value === null || boleta.value === '') {
+        if (boleta.value === null || boleta.value === '' || campos.boleta == false) {
             mensajesError.push('Boleta');
         }
-        if (nombre.value === null || nombre.value === '') {
+        if (nombre.value === null || nombre.value === '' || campos.nombre == false) {
             mensajesError.push('Nombre');
         }
-        if (apePat.value === null || apePat.value === '') {
+        if (apePat.value === null || apePat.value === '' || campos.paterno == false) {
             mensajesError.push('Apellido paterno');
         }
-        if (apeMate.value === null || apeMate.value === '') {
+        if (apeMate.value === null || apeMate.value === '' || campos.materno == false) {
             mensajesError.push('Apellido materno');
         }
-        if (nacimiento.value === null || nacimiento.value === '') {
+        if (nacimiento.value === null || nacimiento.value === '' || campos.nacimiento == false) {
             mensajesError.push('Fecha de nacimiento');
         }
-        if (curp.value === null || curp.value === '') {
+        if (curp.value === null || curp.value === '' || campos.curp == false) {
             mensajesError.push('Curp');
         }
-        if (dir1.value === null || dir1.value === '') {
+        if (dir1.value === null || dir1.value === '' || campos.direccion == false) {
             mensajesError.push('Calle y numero');
         }
-        if (col.value === null || col.value === ''|| col.value === "0") {
+        if (col.value === null || col.value === ''|| col.value === "0" || campos.colonia == false) {
             mensajesError.push('Colonia');
         }
-        if (alcaldia.value === null || alcaldia.value === '' || alcaldia.value === "0") {
+        if (alcaldia.value === null || alcaldia.value === '' || alcaldia.value === "0" || campos.alcaldia == false) {
             mensajesError.push('Alcaldia');
         }
 
-        if (CP.value === null || CP.value === '') {
+        if (CP.value === null || CP.value === '' || campos.CP == false) {
             mensajesError.push('Código postal');
         }
-        if (tel.value === null || tel.value === '') {
+        if (tel.value === null || tel.value === '' || campos.telefono == false) {
             mensajesError.push('Teléfono');
         }
-        if (correo.value === null || correo.value === '') {
+        if (correo.value === null || correo.value === '' || campos.correo == false) {
             mensajesError.push('Correo');
         }
-        if ((escuela.value === null || escuela.value === ''||escuela.value === "0"||escuela.value === "oo") && (nomescuela.value === null || nomescuela.value === '')) {
+        if ((escuela.value === null || escuela.value === ''||escuela.value === "0"||escuela.value === "oo" || campos.escuela == false) && (nomescuela.value === null || nomescuela.value === '' || campos.nomescuela == false)) {
             mensajesError.push('Escuela de procedencia');
         }
-        if (entidad.value === null || entidad.value === ''|| entidad.value === "0") {
+        if (entidad.value === null || entidad.value === ''|| entidad.value === "0" || campos.entidad == false) {
             mensajesError.push('Entidad federativa');
         }
-        if (promedio.value === null || promedio.value === '') {
+        if (promedio.value === null || promedio.value === '' || campos.promedio == false) {
             mensajesError.push('Promedio');
         }
-        if (escomopcion.value === null || escomopcion.value === '') {
+        if (escomopcion.value === null || escomopcion.value === '' || campos.escomopcion == false) {
             mensajesError.push('Opcion de ESCOM');
         }
         

@@ -44,16 +44,17 @@
     <!--Barra de navegacion-->
     <nav class="nav-wrapper blue darken-3" role="navigation">
         <div class="nav-wrapper container ">
-            <a id="logo-container" href="../../../index.html" class="brand-logo white-text"><img
+            <a id="logo-container" href="../index.html" class="brand-logo white-text"><img
                     src="../recursos/logoESCOMIPN.png" width="85%" height="85%"></a>
+            
             <ul class="right hide-on-med-and-down">
-                <li><a href="html/usuarios/alumno/formRegistro.html" class="white-text">Registrarse</a></li>
+                <li><a href="../html/usuarios/alumno/formRegistro.html" class="white-text">Registrarse</a></li>
                 <li><a href="#" class="white-text">Iniciar Sesión</a></li>
             </ul>
 
             <ul id="nav-mobile" class="sidenav blue darken-4">
                 <li><a href="#" class="white-text">Iniciar Sesión</a></li>
-                <li><a href="formRegistro.html" class="white-text">Registrarse</a></li>
+                <li><a href="../html/usuarios/alumno/formRegistro.html" class="white-text">Registrarse</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger  white-text"><i
                     class="material-icons">menu</i></a>
@@ -158,7 +159,7 @@
                         <div class="input-field col s12" id="grupo_direccion">
                             <input type="text" id="direccion" name="direccion" value="<?PHP echo $direccion ?>" >
                             <label for="direccion">Calle y número*: </label>
-                            <p class="formulario__input-error">Debe de tener el siguiente formato calle, numero: ej. Republica de Argentina, 36 </p>
+                            <p class="formulario__input-error">Debe de tener el siguiente formato calle numero: ej. Republica de Argentina 36 </p>
                         </div>
                     </div>
                     <div class="row">
@@ -260,7 +261,7 @@
                                     "CET 1 \"Walter Cross Buchanan\"",
                                     "Otra Opci&oacute;n");
                                     echo "<option value='0' disabled>--Selecciona una --</option>";
-                                    if($otraEscuela==""){
+                                    if($escuelaIPN!="oo"){
                                         for($i=0; $i<21; $i++ ){
                                             if($listaEscuelas[$i]==$escuelaIPN){
                                                 echo "<option value='$listaEscuelas[$i]' selected>$listaNombreEscuelas[$i]</option>";
@@ -399,7 +400,7 @@
                 </div>
             </form>
             <div class="formulario__mensaje" id="formulario__mensaje">
-                <p><FONT COLOR="red">Ingrese su: </FONT></p>
+                <p><FONT COLOR="red">Ingrese los siguientes campos de manera correcta: </FONT></p>
 				<div id='error'></div> 
 			</div>
             

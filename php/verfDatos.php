@@ -24,13 +24,17 @@
 <body>
     <nav class="nav-wrapper blue darken-3" role="navigation">
         <div class="nav-wrapper container ">
-            <a id="logo-container" href="../../../index.html" class="brand-logo white-text"><img
-                    src="../../../recursos/logoESCOMIPN.png" width="85%" height="85%"></a>
+            <a id="logo-container" href="../index.html" class="brand-logo white-text"><img
+                    src="../recursos/logoESCOMIPN.png" width="85%" height="85%"></a>
             
+            <ul class="right hide-on-med-and-down">
+                <li><a href="../html/usuarios/alumno/formRegistro.html" class="white-text">Registrarse</a></li>
+                <li><a href="#" class="white-text">Iniciar Sesión</a></li>
+            </ul>
 
             <ul id="nav-mobile" class="sidenav blue darken-4">
                 <li><a href="#" class="white-text">Iniciar Sesión</a></li>
-                <li><a href="formRegistro.html" class="white-text">Registrarse</a></li>
+                <li><a href="../html/usuarios/alumno/formRegistro.html" class="white-text">Registrarse</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger  white-text"><i
                     class="material-icons">menu</i></a>
