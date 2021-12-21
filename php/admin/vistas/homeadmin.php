@@ -43,15 +43,6 @@ if (!isset($_SESSION['us'])) {
     <div id="index-banner" class="parallax-container">
         <div class="section no-pad-bot">
             <div class="container">
-                <br><br>
-                <h1 class="header center blue-text text-darken-3">Bienvenido</h1>
-                <div class="row center">
-                    <h5 class="header col s12 white-text">Por favor xd</h5>
-                </div>
-                <div class="row center">
-                    <a href="loginadmin.html" id="registro" class="btn-large waves-effect waves-light blue darken-4">Iniciar Sesión</a>
-                </div>
-                <br><br>
 
             </div>
         </div>
@@ -63,36 +54,29 @@ if (!isset($_SESSION['us'])) {
         <div class="section">
             <h4 class="header col s12 center blue-text text-darken-4">Indicaciones</h5>
                 <!--   Icon Section   -->
-                <div class="row">
-                    <!--Indicacion para registrate-->
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <h2 class="center blue-text "><i class="material-icons">assignment_ind</i></h2>
-                            <h5 class="center">Inicia Sesi&oacute;n</h5>Claves de acceso incorrectos
-
-                            <p class="light">Ingresa las credenciales de acceso que te fueron otorgadas para iniciar sesi&oacute;n</p>
-                        </div>
-                    </div>
-                    <!--Indicacion para enviar-->
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <h2 class="center blue-text "><i class="material-icons">send</i></h2>
-                            <h5 class="center">Visualiza la Informaci&oacute;n</h5>
-
-                            <p class="light">Una vez iniciada sesi&oacute;n puedes visualizar la informaci&oacute;n de todos los alumnos registrados y modificarla.</p>
-                        </div>
-                    </div>
-                    <!--Indicacion para revisar tu email-->
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <h2 class="center blue-text "><i class="material-icons">mail</i></h2>
-                            <h5 class="center">Cierra Sesi&oacute;n</h5>
-
-                            <p class="light">No olvides que est&aacute;s tratando con informaci&oacute;n delicada y es importante protegerla, cierra sesi&oacute;n cada que termines de trabajar para evitar acceso indeseado.</p>
-                        </div>
-                    </div>
-                </div>
-
+                <?php
+                    $intNum = 1;
+                    echo "<table align=center width=80%>";
+                    echo "<tr>";
+                    echo "<th>N&uacute;mero</th>";
+                    echo "<th>Cuadrado del n&uacute;mero</th>";
+                    echo "<th>Es par o non?</th>";
+                    echo "</tr>";
+                    while($intNum <= 100){
+                        $intMult = $intNum * $intNum;
+                        echo "<tr>";
+                        echo "<td>".$intNum,"</td>";
+                        echo "<td>".$intMult,"</td>";
+                        if($intMult%2 == 0){
+                            echo "<td>Es par</td>";
+                        } else{
+                            echo "<td>Es non</td>";
+                        }
+                        echo "</tr>";
+                        $intNum++;
+                    }
+                    echo "</table>";
+                ?>
         </div>
     </div>
 
