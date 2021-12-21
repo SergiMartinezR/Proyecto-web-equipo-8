@@ -28,3 +28,4 @@ if (isset($_SESSION['us'])) {
 } else {
     include_once 'vistas/loginadmin.php';
 }
+?>
