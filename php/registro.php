@@ -246,4 +246,3 @@ if($resultado){
 }
 
 //session_destroy();//destruir todas las sesiones
-?>
