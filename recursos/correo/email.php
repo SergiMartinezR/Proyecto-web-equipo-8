@@ -46,8 +46,8 @@ $phpmailer->setFrom($phpmailer->Username,$from_name);
 $phpmailer->AddAddress($address_to); // recipients email
 
 $phpmailer->Subject = $the_subject;	//cuerpo del correo
-$phpmailer->Body .="<h2 style='color:#2154B4  ;'>Bienvenid@ $nombre $apePat $apeMat Alumn@ Periodo Enero 2021</h2>";
-$phpmailer->Body .= "<p>Este correo tiene el propósito que conozca la hora y el grupo en el que se le aplicara su <b>examen diagnóstico </b>, en las instalaciones  ESCOM IPN, ubicada en la Unidad Profesional Adolfo López Mateos, 07320 Ciudad de México, CDMX  </p>";
+$phpmailer->Body .=utf8_decode("<h2 style='color:#2154B4  ;'>Bienvenid@ $nombre $apePat $apeMat Alumn@ Periodo Enero 2021</h2>");
+$phpmailer->Body .=utf8_decode("<p>Este correo tiene el propósito que conozca la hora y el grupo en el que se le aplicara su <b>examen diagnóstico </b>, en las instalaciones  ESCOM IPN, ubicada en la Unidad Profesional Adolfo López Mateos, 07320 Ciudad de México, CDMX  </p>");
 $phpmailer->AddAttachment( $file_to_attach , 'FichaRegistro2021.pdf' ); // se adjunta el archivo el segundo parametro de los corrchetes es el nombre con el que aparecera en el correo
 //$phpmailer->AddStringAttachment( $cadenaPDF , 'FichaRegistro20212.pdf' );
 $phpmailer->IsHTML(true);

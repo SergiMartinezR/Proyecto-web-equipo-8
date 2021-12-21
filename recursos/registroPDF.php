@@ -82,32 +82,32 @@ $pdf->SetFont('Arial','',10);
     $pdf->cell(80,10,'FECHA DE NACIMIENTO',0,0,'C', 1);
     $pdf->cell(110,10,$alumno[4],0,1,'C', 0);
 
-    $pdf->cell(80,10,utf8_decode('GÉNERO'),0,0,'C', 1);
+    $pdf->cell(80,10,'GÉNERO',0,0,'C', 1);
     $pdf->cell(110,10,$alumno[5],0,1,'C', 0);
 
-    $pdf->cell(80,10,utf8_decode('CURP'),0,0,'C', 1);
+    $pdf->cell(80,10,'CURP',0,0,'C', 1);
     $pdf->cell(110,10,$alumno[6],0,1,'C', 0);
     //---------- Contacto----------
     $pdf->Ln();
     $pdf->SetFont('Arial','B',12);
     $pdf->cell(190,10,'Contacto',0,1,'', 0);
     $pdf->SetFont('Arial','',10);
-    $pdf->cell(80,10,utf8_decode('CALLE Y NÚMERO'),0,0,'C', 1);
+    $pdf->cell(80,10,'CALLE Y NÚMERO',0,0,'C', 1);
     $pdf->cell(110,10,$alumno[7],0,1,'C', 0);
 
     $pdf->cell(80,10,'COLONIA',0,0,'C', 1);
     $pdf->cell(110,10,$alumno[8],0,1,'C', 0);
 
-    $pdf->cell(80,10,utf8_decode('ALCADÍA'),0,0,'C', 1);
+    $pdf->cell(80,10,'ALCADÍA',0,0,'C', 1);
     $pdf->cell(110,10,$alumno[9],0,1,'C', 0);
 
-    $pdf->cell(80,10,utf8_decode('CÓDIGO POSTAL'),0,0,'C', 1);
+    $pdf->cell(80,10,'CÓDIGO POSTAL',0,0,'C', 1);
     $pdf->cell(110,10,$alumno[10],0,1,'C', 0);
 
-    $pdf->cell(80,10,utf8_decode('TELÉFONO O CELULAR'),0,0,'C', 1);
+    $pdf->cell(80,10,'TELÉFONO O CELULAR',0,0,'C', 1);
     $pdf->cell(110,10,$alumno[11],0,1,'C', 0);
 
-    $pdf->cell(80,10,utf8_decode('CORREO ELÉCTRONICO'),0,0,'C', 1);
+    $pdf->cell(80,10,'CORREO ELÉCTRONICO',0,0,'C', 1);
     $pdf->cell(110,10,$alumno[12],0,1,'C', 0);
     // ------Procedencia--------
     $pdf->Ln();
@@ -124,7 +124,7 @@ $pdf->SetFont('Arial','',10);
     $pdf->cell(80,10,'PROMEDIO',0,0,'C', 1);
     $pdf->cell(110,10,$alumno[15],0,1,'C', 0);
 
-    $pdf->cell(80,10,utf8_decode('OPCIÓN '),0,0,'C', 1);
+    $pdf->cell(80,10,'OPCIÓN ',0,0,'C', 1);
     $pdf->cell(110,10,$alumno[16],0,1,'C', 0);
 
     //---- EXAMEN --------------------
