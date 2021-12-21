@@ -1,6 +1,6 @@
 <?php
 session_start();
-$boleta = $_SESSION['NBoleta'];// la boleta que se le pasa a través de la sesión
+$boleta = $_SESSION['boleta'];// la boleta que se le pasa a través de la sesión
 
 // Cell(ancho,alto, texto,borde,?, alineacion, rellenar, link)
 require('fpdf184/fpdf.php'); // IMPORTANTE
@@ -47,7 +47,7 @@ function Footer()
 
 
 //conexion con la base de datos ---------
-require '../php/con_db.php'; /* trae la conexion */
+require 'con_db.php'; /* trae la conexion */
 
 $sql= "SELECT * FROM alumno WHERE boleta='$boleta' ";
 /* selecciona la tabla de clientes */
@@ -139,13 +139,12 @@ $pdf->SetFont('Arial','',10);
     $pdf->cell(80,10,'GRUPO',0,0,'C', 1);
     $pdf->cell(110,10,$alumno[18],0,1,'C', 0);
 
-    //$filename='correo/FichaRegistro2021.pdf';
-    //$cadenaPDF=$pdf->Output($filename,'F');//Salida del documento IMPORTANTE
+    $filename='correo/FichaRegistro2021.pdf';
+    $cadenaPDF=$pdf->Output($filename,'F');//Salida del documento IMPORTANTE
 
 
-    $pdf->Output();//Salida del documento IMPORTANTE
-    //session_destroy();//destruir todas las sesiones
-
+    //$pdf->Output();//Salida del documento IMPORTANTE
+    session_destroy();//destruir todas las sesiones
 
 
 ?>
