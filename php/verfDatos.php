@@ -46,8 +46,8 @@ include("datosForm.php");
   <h2 class="center-align"> <i class="large material-icons">account_circle</i> Datos del alumno </h2>
   <div class="divider"></div>
   <p class="center-align"><b><i>INSTRUCCIONES: </i></b></p>
-  <p class="center-align"> Porfavor verifique que los datos sean <b> CORRECTOS</b>.
-    En el caso de que sean <b> INCORRECTOS </b> seleccione el bot&oacute;n de <i>MODIFICAR</i> y si estos son <b>CORRECTOS </b>el de <i>GENERAR PDF</i>.</p>
+  <p class="center-align"> Hola <?php echo $nombre;?> <?php echo $paterno;?> <?php echo $materno; ?>  verifica que los datos que ingresaste sean <b> CORRECTOS</b>.</p> 
+  <p class="center-align">En el caso de que sean <b> INCORRECTOS </b> seleccione el bot&oacute;n de <i>Modificar</i> y si estos son <b>CORRECTOS </b>el de <i>Aceptar</i>.</p> 
 
   <div class="row ">
     <div class="col s2"></div>
