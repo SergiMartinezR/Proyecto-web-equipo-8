@@ -37,7 +37,7 @@ const expresiones = {
     CP: /^(\d{5})$/,
     correo: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
     promedio: /^((10.00)|([6-9]{1}\.\d\d))$/,
-    escuelaProcedencia: /^[a-zA-ZÀ-ÿ0-9\s\.]{3,30}$/
+    escuelaProcedencia: /^[a-zA-ZÀ-ÿ0-9\s\.\"]{3,30}$/
 }
 const campos = {
     boleta: false,
@@ -75,7 +75,7 @@ const validarIdentidad = (e) => {
             validarCampos(expresiones.materno, e.target, e.target.name);//se le pasa la expresion regular, el input a evaluar y el div a cambiar
             break;
         case "nacimiento":
-            console.log(e.target.value)
+            //console.log(e.target.value)
             validarCampos(expresiones.nacimiento, e.target, e.target.name);//se le pasa la expresion regular, el input a evaluar y el div a cambiar
             break;
         case "curp":
@@ -179,23 +179,7 @@ formulario.addEventListener('submit', (e) => {
         && campos.correo && campos.curp && campos.direccion && campos.materno && campos.telefono
         && campos.nacimiento && campos.alcaldia  && campos.entidad && campos.promedio
         && (campos.escuela || campos.nomescuela)) {
-            console.log(campos.nombre);
-            console.log(campos.paterno);
-            console.log(campos.CP);
-            console.log(campos.alcaldia);
-            console.log(campos.boleta);
-            console.log(campos.colonia);
-            console.log(campos.correo);
-            console.log(campos.curp);
-            console.log(campos.direccion);
-            console.log(campos.materno);
-            console.log(campos.telefono);
-            console.log(campos.nacimiento);
-            console.log(campos.alcaldia);
-            console.log(campos.entidad);
-            console.log(campos.promedio);
-            console.log(campos.escuela);
-            console.log(campos.nomescuela);
+
             document.getElementById("formulario__mensaje").classList.add('formulario__mensaje');
             
         //pone el campo en verde
@@ -207,23 +191,7 @@ formulario.addEventListener('submit', (e) => {
     } else {
 
         e.preventDefault();
-        console.log(campos.nombre);
-            console.log(campos.paterno);
-            console.log(campos.CP);
-            console.log(campos.alcaldia);
-            console.log(campos.boleta);
-            console.log(campos.colonia);
-            console.log(campos.correo);
-            console.log(campos.curp);
-            console.log(campos.direccion);
-            console.log(campos.materno);
-            console.log(campos.telefono);
-            console.log(campos.nacimiento);
-            console.log(campos.alcaldia);
-            console.log(campos.entidad);
-            console.log(campos.promedio);
-            console.log(campos.escuela);
-            console.log(campos.nomescuela);
+
         var mensajesError = [];
         if (boleta.value === null || boleta.value === '' || campos.boleta == false) {
             mensajesError.push('Boleta');

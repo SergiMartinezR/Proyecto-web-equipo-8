@@ -37,7 +37,7 @@ const expresiones = {
     CP: /^(\d{5})$/,
     correo: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
     promedio: /^((10.00)|([6-9]{1}\.\d\d))$/,
-    escuelaProcedencia: /^[a-zA-ZÀ-ÿ0-9\s\.]{3,30}$/
+    escuelaProcedencia: /^[a-zA-ZÀ-ÿ0-9\s\.\"]{3,30}$/
 }
 const campos = {
     boleta: true,

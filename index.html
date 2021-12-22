@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,17 +15,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
+
   <!--Barra de navegacion-->
   <nav class="nav-wrapper blue darken-3" role="navigation">
     <div class="nav-wrapper container ">
       <a id="logo-container" href="index.html" class="brand-logo white-text"><img src="recursos/logoESCOMIPN.png" width="85%" height="85%"></a>
       <ul class="right hide-on-med-and-down ">
-        <li><a href="html/usuarios/alumno/formRegistro.html" class="white-text">Registrarse</a></li>
-        <li><a href="#" class="white-text">Iniciar Sesión</a></li>
+        <li><a href='html/usuarios/alumno/formRegistro.html' class="white-text">Registrarse</a></li>
+        <li><a href="html/usuarios/alumno/formRecuperar.html" class="white-text">Recuperar mi información</a></li>
       </ul>
       
       <ul id="nav-mobile" class="sidenav blue darken-4">
-        <li><a href="#" class="white-text">Iniciar Sesión</a></li>
+        <li><a href="html/usuarios/alumno/formRecuperar.html"  class="white-text">Recuperar mi información</a></li>
         <li><a href="html/usuarios/alumno/formRegistro.html" class="white-text">Registrarse</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger  white-text"><i class="material-icons">menu</i></a>
@@ -56,30 +58,39 @@
       <!--   Icon Section   -->
       <div class="row">
         <!--Indicacion para registrate-->
-        <div class="col s12 m4">
+        <div class="col s12 m3">
           <div class="icon-block">
             <h2 class="center blue-text "><i class="material-icons">assignment_ind</i></h2>
-            <h5 class="center">Resgistrate</h5>
+            <h5 class="center">Registrate</h5>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+            <p class="light">Primero deberás registrarte en esta página para conocer el lugar y hora para la aplicación de tu examen diagnóstico.</p>
           </div>
         </div>
         <!--Indicacion para enviar-->
-        <div class="col s12 m4">
+        <div class="col s12 m3">
           <div class="icon-block">
             <h2 class="center blue-text "><i class="material-icons">send</i></h2>
             <h5 class="center">Envia tus Datos</h5>
 
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+            <p class="light">Rellena el formulario con tus datos correcto y si es necesario cambiarlos hazlo. Imprime tu PDF y mandate el correo electrónico.</p>
           </div>
         </div>
         <!--Indicacion para revisar tu email-->
-        <div class="col s12 m4">
+        <div class="col s12 m3">
           <div class="icon-block">
             <h2 class="center blue-text "><i class="material-icons">mail</i></h2>
             <h5 class="center">Revisar tu email</h5>
 
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+            <p class="light">Abre tu cuenta de correo electrónico que registraste en el formulario para visualizar tus datos.</p>
+          </div>
+        </div>
+        <!--Recuperar datos-->
+        <div class="col s12 m3">
+          <div class="icon-block">
+            <h2 class="center blue-text "><i class="material-icons">replay</i></h2>
+            <h5 class="center">Recupera tus datos</h5>
+
+            <p class="light">Puedes recuperar tus datos con tu boleta y CURP.</p>
           </div>
         </div>
       </div>
@@ -92,7 +103,7 @@
     <div class="container">
     </div>
   </footer>
-
+  
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
