@@ -92,7 +92,7 @@ if ($phpmailer->Send())
           </div>
      </nav>
      <div class='container'>
-          <h4><center>El registrado correo con la boleta <b>$alumno[0]</b> fue enviado con exito a: $alumno[12].</center></h4>       
+          <h4><center>El correo registrado con la boleta <b>$alumno[0]</b> fue enviado con exito a: $alumno[12].</center></h4>       
           <div class='row'>
                     <div class='row'></div>
                     <div class='row'>
