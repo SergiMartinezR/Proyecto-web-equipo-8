@@ -1,18 +1,3 @@
-<?php
-
-if($_GET['msg'] == 1){
-    echo "<script>alert('Se actualizaron los datos del alumno')</script>";
-} else if ($_GET['msg'] == 3){
-    echo "<script>alert('Se eliminó correctamente el alumno')</script>";
-}else if($_GET['msg'] == 2){
-    echo "<script>alert('Ha ocurrido un error')</script>";
-}
-
-if (!isset($_SESSION['us'])) {
-    echo "<script>alert('Por favor inicie sesión')</script>";
-    include_once 'http://localhost/Proyecto-web/php/admin/validar.php';
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +15,22 @@ if (!isset($_SESSION['us'])) {
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="http://localhost/Proyecto-web/css/style.css">
+    <?php
+
+    if(isset($_GET['msg']) && $_GET['msg']== 1){
+        echo "<script>alert('Se actualizaron los datos del alumno')</script>";
+    } else if (isset($_GET['msg']) && $_GET['msg'] == 3){
+        echo "<script>alert('Se eliminó correctamente el alumno')</script>";
+    }else if(isset($_GET['msg']) && $_GET['msg'] == 2){
+        echo "<script>alert('Ha ocurrido un error')</script>";
+    }
+
+    if (!isset($_SESSION['us'])) {
+        echo "<script>alert('Por favor inicie sesión')</script>";
+        include_once 'http://localhost/Proyecto-web/php/admin/validar.php';
+    }
+    ?>
+
 </head>
 
 <body>
