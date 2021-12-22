@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 20, 2021 at 11:39 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.0
+-- Servidor: 127.0.0.1:3306
+-- Tiempo de generación: 18-12-2021 a las 17:52:10
+-- Versión del servidor: 5.7.31
+-- Versión de PHP: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,12 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `twed`
+-- Base de datos: `twed`
 --
 
 -- --------------------------------------------------------
-
 --
--- Table structure for table `admin`
+-- Estructura de tabla para la tabla `admin`
 --
 
 DROP TABLE IF EXISTS `admin`;
@@ -35,17 +34,17 @@ CREATE TABLE IF NOT EXISTS `admin` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Volcado de datos para la tabla `admin`
 --
 
 INSERT INTO `admin` (`user`, `pass`) VALUES
 ('admin', 'admin'),
 ('admin1', '1234');
+COMMIT;
 
 -- --------------------------------------------------------
-
 --
--- Table structure for table `alumno`
+-- Estructura de tabla para la tabla `alumno`
 --
 
 DROP TABLE IF EXISTS `alumno`;
@@ -73,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `alumno` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `alumno`
+-- Volcado de datos para la tabla `alumno`
 --
 
 INSERT INTO `alumno` (`boleta`, `nombre`, `paterno`, `materno`, `nacimiento`, `genero`, `curp`, `calleNum`, `colonia`, `alcaldia`, `cp`, `telefono`, `correo`, `escuelap`, `entidadF`, `promedio`, `escomOpcion`, `horario`, `salon`) VALUES
@@ -81,6 +80,7 @@ INSERT INTO `alumno` (`boleta`, `nombre`, `paterno`, `materno`, `nacimiento`, `g
 ('PP10235444', 'José Luis', 'Ortega', 'Silva', '3214-05-20', 'Femenino', 'SIOF810607HDFLRR05', 'Xochicalco, 56', 'Colonia1', 'Tláhuac', '03020', '5500001001', 'francis@gmail.com', 'CECyT 19', 'Campeche', '7.00', '1', '08:30', 'Laboratorio 1'),
 ('0012345678', 'Julio', 'Ortega', 'Silva', '2001-10-05', 'Masculino', 'OESJ011005HDFRLRA8', 'Xochicalco, 31', '146123', 'Magdalena Contreras', '03020', '5527607945', 'correo1@gmail.com.mx', 'JosÃ© Ojeda', 'Baja California Sur', '6.09', '1', '08:30', 'Laboratorio 1'),
 ('2020630352', 'JuliÃ³', 'Ortega', 'Silva', '2001-10-05', 'Masculino', 'OESJ011001HDFRLRA8', 'Xochicalco, 31', '146344', 'Iztapalapa', '03020', '5527607945', 'jorgedorsi@gmail.com', 'CECyT 13', 'Estado de MÃ©xico', '6.00', '3', '08:30', 'Laboratorio 1');
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

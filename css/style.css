@@ -55,3 +55,32 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
+/*--------Lista de alumnos registrados-------*/
+
+table{
+  border-collapse: collapse;
+  font-size: 12pt;
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+table th{
+  text-align: center;
+  padding: 10px;
+  background: #1565C0;
+  color: #FFF;
+}
+table tr:nth-child(odd){
+  background: #CBCBCB;
+}
+table td{
+    padding: 10px;
+}
+.link-edit{
+  color: #1565C0;
+}
+.link-delete{
+  color: red;
+}

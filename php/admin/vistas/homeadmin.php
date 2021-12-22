@@ -1,7 +1,17 @@
 <?php
+
+if($_GET['msg'] == 1){
+    echo "<script>alert('Se actualizaron los datos del alumno')</script>";
+} else if ($_GET['msg'] == 3){
+    echo 'hola';
+    echo "<script>alert('Se eliminó correctamente el alumno')</script>";
+}else if($_GET['msg'] == 2){
+    echo "<script>alert('Ha ocurrido un error')</script>";
+}
+
 if (!isset($_SESSION['us'])) {
-    echo "<script>alert('Por favor inicie sesion')</script>";
-    include_once '../validar.php';
+    echo "<script>alert('Por favor inicie sesión')</script>";
+    include_once 'http://localhost/Proyecto-web/php/admin/validar.php';
 }
 ?>
 
@@ -20,6 +30,7 @@ if (!isset($_SESSION['us'])) {
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="http://localhost/Proyecto-web/css/style.css">
 </head>
 
 <body>
@@ -28,12 +39,12 @@ if (!isset($_SESSION['us'])) {
         <div class="nav-wrapper container ">
             <a id="logo-container" href="#" class="brand-logo white-text"><img src="http://localhost/Proyecto-web/recursos/logoESCOMIPN.png" width="85%" height="85%"></a>
             <ul class="right hide-on-med-and-down ">
-                <li><a href="" class="white-text"><?php echo $_SESSION['us'] ?></a></li>
+                <li><a class="white-text"><?php echo $_SESSION['us'] ?></a></li>
                 <li><a href="http://localhost/Proyecto-web/php/admin/cerrar_sesion.php" class="white-text">Cerrar Sesi&oacute;n</a></li>
             </ul>
 
             <ul id="nav-mobile" class="sidenav blue darken-4">
-                <li><a href="" class="white-text"><?php echo $_SESSION['us'] ?></a></li>
+                <li><a class="white-text"><?php echo $_SESSION['us'] ?></a></li>
                 <li><a href="http://localhost/Proyecto-web/php/admin/cerrar_sesion.php" class="white-text">Cerrar Sesi&oacute;n</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger  white-text"><i class="material-icons">menu</i></a>
@@ -43,58 +54,81 @@ if (!isset($_SESSION['us'])) {
     <div id="index-banner" class="parallax-container">
         <div class="section no-pad-bot">
             <div class="container">
+                <h4 class="header col s12 center blue-text text-darken-4">Lista de alumnos registrados</h4>
                 <br><br>
-                <h1 class="header center blue-text text-darken-3">Bienvenido</h1>
                 <div class="row center">
-                    <h5 class="header col s12 white-text">Por favor xd</h5>
+                    <a href="http://localhost/Proyecto-web/html/usuarios/alumno/formRegistro.html" class="btn-large waves-effect waves-light blue darken-4">Registrar nuevo alumno</a>
                 </div>
-                <div class="row center">
-                    <a href="loginadmin.html" id="registro" class="btn-large waves-effect waves-light blue darken-4">Iniciar Sesión</a>
-                </div>
-                <br><br>
-
             </div>
         </div>
         <div class="parallax"><img src="http://localhost/Proyecto-web/recursos/datos.png" alt="Inicio"></div>
     </div>
 
-    <!--Segundo Recuadro (Indicaciones)-->
-    <div class="container">
-        <div class="section">
-            <h4 class="header col s12 center blue-text text-darken-4">Indicaciones</h5>
-                <!--   Icon Section   -->
-                <div class="row">
-                    <!--Indicacion para registrate-->
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <h2 class="center blue-text "><i class="material-icons">assignment_ind</i></h2>
-                            <h5 class="center">Inicia Sesi&oacute;n</h5>Claves de acceso incorrectos
+    <table>
+        <tr>
+            <th>Boleta</th>
+            <th>Nombre</th>
+            <th>Ap. paterno</th>
+            <th>Ap. materno</th>
+            <th>Fecha nac.</th>
+            <th>G&eacute;nero</th>
+            <th>CURP</th>
+            <th>Calle y n&uacute;mero</th>
+            <th>Colonia</th>
+            <th>Alcald&iacute;a</th>
+            <th>C&oacute;digo postal</th>
+            <th>Telefono</th>
+            <th>Correo</th>
+            <th>Escuela de procedencia</th>
+            <th>Entidad Federativa</th>
+            <th>Promedio</th>
+            <th>Opci&oacute;n no.</th>
+            <th>Horario</th>
+            <th>Sal&oacute;n</th>
+            <th>Acciones</th>
+        </tr>
 
-                            <p class="light">Ingresa las credenciales de acceso que te fueron otorgadas para iniciar sesi&oacute;n</p>
-                        </div>
-                    </div>
-                    <!--Indicacion para enviar-->
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <h2 class="center blue-text "><i class="material-icons">send</i></h2>
-                            <h5 class="center">Visualiza la Informaci&oacute;n</h5>
+        <?php
+        require '../con_db.php';
 
-                            <p class="light">Una vez iniciada sesi&oacute;n puedes visualizar la informaci&oacute;n de todos los alumnos registrados y modificarla.</p>
-                        </div>
-                    </div>
-                    <!--Indicacion para revisar tu email-->
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <h2 class="center blue-text "><i class="material-icons">mail</i></h2>
-                            <h5 class="center">Cierra Sesi&oacute;n</h5>
+        $consulta = "SELECT * FROM alumno";
+        $resultado = mysqli_query($conex, $consulta);
 
-                            <p class="light">No olvides que est&aacute;s tratando con informaci&oacute;n delicada y es importante protegerla, cierra sesi&oacute;n cada que termines de trabajar para evitar acceso indeseado.</p>
-                        </div>
-                    </div>
-                </div>
-
-        </div>
-    </div>
+        $filas = mysqli_num_rows($resultado);
+        if ($filas > 0) {
+            while ($datos = mysqli_fetch_array($resultado)) {
+        ?>
+                <tr>
+                    <td><?php echo $datos['boleta'] ?></td>
+                    <td><?php echo $datos['nombre'] ?></td>
+                    <td><?php echo $datos['paterno'] ?></td>
+                    <td><?php echo $datos['materno'] ?></td>
+                    <td><?php echo $datos['nacimiento'] ?></td>
+                    <td><?php echo $datos['genero'] ?></td>
+                    <td><?php echo $datos['curp'] ?></td>
+                    <td><?php echo $datos['calleNum'] ?></td>
+                    <td><?php echo $datos['colonia'] ?></td>
+                    <td><?php echo $datos['alcaldia'] ?></td>
+                    <td><?php echo $datos['cp'] ?></td>
+                    <td><?php echo $datos['telefono'] ?></td>
+                    <td><?php echo $datos['correo'] ?></td>
+                    <td><?php echo $datos['escuelap'] ?></td>
+                    <td><?php echo $datos['entidadF'] ?></td>
+                    <td><?php echo $datos['promedio'] ?></td>
+                    <td><?php echo $datos['escomOpcion'] ?></td>
+                    <td><?php echo $datos['horario'] ?></td>
+                    <td><?php echo $datos['salon'] ?></td>
+                    <td>
+                        <a href="vistas/actualizarAlumno.php?bol=<?php echo $datos['boleta'] ?>" class="link-edit">Editar</a>
+                        |
+                        <a href="vistas/eliminarAlumno.php?bol=<?php echo $datos['boleta'] ?>" class="link-delete">Eliminar</a>
+                    </td>
+                </tr>
+        <?php
+            }
+        }
+        ?>
+    </table>
 
 
     <footer class="page-footer blue darken-3">
