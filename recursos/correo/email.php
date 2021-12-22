@@ -47,7 +47,7 @@ $phpmailer->AddAddress($address_to); // recipients email
 
 $phpmailer->Subject = $the_subject;	//cuerpo del correo
 $phpmailer->Body .=utf8_decode("<h2 style='color:#2154B4  ;'>Bienvenid@ $nombre $apePat $apeMat Alumn@ Periodo Enero 2021</h2>");
-$phpmailer->Body .=utf8_decode("<p>Este correo tiene el propósito que conozca la hora y el grupo en el que se le aplicara su <b>examen diagnóstico </b>, en las instalaciones  ESCOM IPN, ubicada en la Unidad Profesional Adolfo López Mateos, 07320 Ciudad de México, CDMX  </p>");
+$phpmailer->Body .=utf8_decode("<p>Este correo tiene el propósito que conozca la hora y el grupo en el que se le aplicará su <b>examen diagnóstico</b>, en las instalaciones  ESCOM IPN, ubicada en la Unidad Profesional Adolfo López Mateos, 07320 Ciudad de México, CDMX  </p>");
 $phpmailer->AddAttachment( $file_to_attach , 'FichaRegistro2021.pdf' ); // se adjunta el archivo el segundo parametro de los corrchetes es el nombre con el que aparecera en el correo
 //$phpmailer->AddStringAttachment( $cadenaPDF , 'FichaRegistro20212.pdf' );
 $phpmailer->IsHTML(true);
@@ -62,7 +62,7 @@ if ($phpmailer->Send())
 
      <head>
      <meta http-equiv='content-type' content='text/html; charset=utf-8' />
-     <title>.: Mensaje :.</title>
+     <title>Registro</title>
      <link rel='stylesheet' href='../../css/validacion.css'  type='text/css'>
      <!-- Compiled and minified CSS -->
      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'>
@@ -80,11 +80,11 @@ if ($phpmailer->Send())
                          src='../../recursos/logoESCOMIPN.png' width='85%'' height='85%'></a>
                <ul class='right hide-on-med-and-down'>
                     <li><a href='../../html/usuarios/alumno/formRegistro.html' class='white-text'>Registrarse</a></li>
-                    <li><a href='' class='white-text'>Iniciar Sesión</a></li>
+                    <li><a href='../../html/usuarios/alumno/formRecuperar.html' class='white-text'>Recuperar mi información</a></li>
                </ul>
 
                <ul id='nav-mobile' class='sidenav blue darken-4'>
-                    <li><a href='#' class='white-text'>Iniciar Sesión</a></li>
+                    <li><a href='../../html/usuarios/alumno/formRecuperar.html' class='white-text'>Recuperar mi información</a></li>
                     <li><a href='../../html/usuarios/alumno/formRegistro.html' class='white-text'>Registrarse</a></li>
                </ul>
                <a href='#' data-target='nav-mobile' class='sidenav-trigger  white-text'><i
@@ -92,7 +92,7 @@ if ($phpmailer->Send())
           </div>
      </nav>
      <div class='container'>
-          <h4><center>El correo de con la boleta <b>$alumno[0]</b> fue enviado con exito a: $alumno[12].</center></h4>       
+          <h4><center>El registrado correo con la boleta <b>$alumno[0]</b> fue enviado con exito a: $alumno[12].</center></h4>       
           <div class='row'>
                     <div class='row'></div>
                     <div class='row'>
@@ -117,16 +117,20 @@ if ($phpmailer->Send())
                     </div>
           </div>
      </div>
+     <footer class='page-footer blue darken-3'>
+        <div class='container'>
+        </div>
+    </footer>
      </body>
      </html>";
-else
+else{
      echo "<!DOCTYPE HTML 
      PUBLIC '- / / W3C/ / DTD XHTML 1.0 Transitional / / EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
      <html xmlns='http://www.w3.org/1999/xhtml'>
 
      <head>
      <meta http-equiv='content-type' content='text/html; charset=utf-8' />
-     <title>.: Mensaje :.</title>
+     <title>Registro</title>
      <link rel='stylesheet' href='../../css/validacion.css'  type='text/css'>
      <!-- Compiled and minified CSS -->
      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'>
@@ -144,11 +148,11 @@ else
                          src='../../recursos/logoESCOMIPN.png' width='85%'' height='85%'></a>
                <ul class='right hide-on-med-and-down'>
                     <li><a href='../../html/usuarios/alumno/formRegistro.html' class='white-text'>Registrarse</a></li>
-                    <li><a href='' class='white-text'>Iniciar Sesión</a></li>
+                    <li><a href='../../html/usuarios/alumno/formRecuperar.html' class='white-text'>Recuperar mi información</a></li>
                </ul>
 
                <ul id='nav-mobile' class='sidenav blue darken-4'>
-                    <li><a href='#' class='white-text'>Iniciar Sesión</a></li>
+                    <li><a href='../../html/usuarios/alumno/formRecuperar.html' class='white-text'>Recuperar mi información</a></li>
                     <li><a href='../../html/usuarios/alumno/formRegistro.html' class='white-text'>Registrarse</a></li>
                </ul>
                <a href='#' data-target='nav-mobile' class='sidenav-trigger  white-text'><i
@@ -172,6 +176,11 @@ else
                     </div>
           </div>
      </div>
+     <footer class='page-footer blue darken-3'>
+        <div class='container'>
+        </div>
+    </footer>
      </body>
      </html>";
+}
 ?>

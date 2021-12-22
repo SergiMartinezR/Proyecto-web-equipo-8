@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-tran.dtd">
+<html xmls="https://www.w3.org/1999/xhtm" xml:lang="sp" lang="sp">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recuperar mi información</title>
+    <!-- CSS  -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="../../../css/validacion.css" rel="stylesheet" type="text/css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--<link rel="stylesheet" href="../../../css/validacion.css"  type="text/css">-->
+</head>
+
+<body>
+    <!--Barra de navegacion-->
+    <nav class="nav-wrapper blue darken-3" role="navigation">
+        <div class="nav-wrapper container ">
+            <a id="logo-container" href="../../../index.html" class="brand-logo white-text"><img
+                    src="../../../recursos/logoESCOMIPN.png" width="85%" height="85%"></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="formRegistro.html" class="white-text">Registrarse</a></li>
+                <li><a href="#" class="white-text">Iniciar Sesión</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav blue darken-4">
+                <li><a href="#" class="white-text">Iniciar Sesión</a></li>
+                <li><a href="formRegistro.html" class="white-text">Registrarse</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger  white-text"><i
+                    class="material-icons">menu</i></a>
+        </div>
+    </nav>
+    <!--Cierre de la barra de navegacion-->
+    <!---Inicio del cuerpo-->
+    <div class="container">
+        <div class="row">
+            <!---Inicio del formulario-->
+            <form action="../../../php/verfDatos.php" class="col s12"  id="formulario" name="formulario" method="post" >
+                <div class="row">
+                    <div class="input-field col s12" >
+                        <p  class="pink-text text-darken-4">Recuerde: (*) El campo es obligatorio</p>
+                    </div>                 
+                </div>
+                    <div class="row">
+                        <div class="input-field col s12" id="grupo_boleta">
+                            <input type="text" id="boleta" size="10" name="boleta" maxlength="10"  >
+                            <label for="boleta">No. de Boleta*:</label>
+                            <p class="formulario__input-error">Esa boleta no existe</p>
+                        </div>
+                       
+                    </div>
+                    <div class="row" >
+                        <div class="input-field col s12" id="grupo_curp">
+                            <input type="text" id="curp" size="30" name="curp"  >
+                            <label for="nombre" >CURP*:</label>
+                            <p class="formulario__input-error">El CURP no existe</p>
+                        </div>
+                <!---Fin del Formulario-->
+                <!---Botones del formulario-->
+                <div class="row"></div>
+                <div class="row">
+                    <div class="col s3"></div>
+                    <div class="col s3"></div>
+                    <div class="col s2"></div>
+                    <div class="col s1"></div>
+                    <div class="col s2">
+                        <!---Boton para enviar-->
+                        <button class="btn waves-effect colorEscom1 right" type="submit"
+                        name="action">Enviar
+                        <i class="material-icons right">send</i>
+                    </button>
+                    </div>
+                    <div class="col s1"></div>
+                </div>
+            </form>
+            <div class="formulario__mensaje" id="formulario__mensaje">
+                <p><FONT COLOR="red">Ingrese los siguientes campos de manera correcta: </FONT></p>
+				<div id='error'></div> 
+			</div>
+            
+        </div>
+
+    </div>
+
+    <script src="../../../js/valRecuperar.js"></script><!--Para validar el formulario-->
+    <footer class='page-footer blue darken-3'>
+        <div class='container'>
+        </div>
+    </footer>
+    
+    
+</body>
+
+</html>

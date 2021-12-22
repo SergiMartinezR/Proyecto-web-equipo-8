@@ -48,11 +48,11 @@ $otraEscuela = $_SESSION['nomescuela'];
 
             <ul class="right hide-on-med-and-down">
                 <li><a href="../html/usuarios/alumno/formRegistro.html" class="white-text">Registrarse</a></li>
-                <li><a href="#" class="white-text">Iniciar Sesión</a></li>
+                <li><a href="../html/usuarios/alumno/formRecuperar.html" class="white-text">Recuperar mi información</a></li>
             </ul>
 
             <ul id="nav-mobile" class="sidenav blue darken-4">
-                <li><a href="#" class="white-text">Iniciar Sesión</a></li>
+                <li><a href="../html/usuarios/alumno/formRecuperar.html" class="white-text">Recuperar mi información</a></li>
                 <li><a href="../html/usuarios/alumno/formRegistro.html" class="white-text">Registrarse</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger  white-text"><i class="material-icons">menu</i></a>
@@ -421,7 +421,10 @@ $otraEscuela = $_SESSION['nomescuela'];
 
     <script src="../js/validacionesMod.js"></script>
     <!--Para validar el formulario-->
-
+    <footer class='page-footer blue darken-3'>
+        <div class='container'>
+        </div>
+    </footer>
 
 
 </body>
