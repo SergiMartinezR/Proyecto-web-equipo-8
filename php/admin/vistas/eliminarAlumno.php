@@ -19,9 +19,9 @@ if (empty($_GET['bol'])){
         $eliminado = mysqli_query($conex, $delete);
 
         if ($eliminado) {
-            include 'homeadmin.php?msg=3';
+            header('location: homeadmin.php?msg=3');
         } else {
-            include_once 'homeadmin.php?msg=2';
+            header('location: homeadmin.php?msg=2');
         }
     }
         

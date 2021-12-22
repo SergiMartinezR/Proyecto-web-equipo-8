@@ -58,9 +58,9 @@ if (!empty($_POST)) {
     $actualizado = mysqli_query($conex, $update);
 
     if ($actualizado) {
-        include_once 'homeadmin.php?msg=1';
+        header('location: homeadmin.php?msg=1');
     } else {
-        include_once 'homeadmin.php?msg=2';
+        header('location: homeadmin.php?msg=2');
     }
 }
 

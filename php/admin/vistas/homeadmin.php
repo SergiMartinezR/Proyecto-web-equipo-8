@@ -3,7 +3,6 @@
 if($_GET['msg'] == 1){
     echo "<script>alert('Se actualizaron los datos del alumno')</script>";
 } else if ($_GET['msg'] == 3){
-    echo 'hola';
     echo "<script>alert('Se eliminó correctamente el alumno')</script>";
 }else if($_GET['msg'] == 2){
     echo "<script>alert('Ha ocurrido un error')</script>";
