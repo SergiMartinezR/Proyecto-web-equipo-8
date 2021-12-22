@@ -1,3 +1,102 @@
+<?php
+
+require '../../con_db.php';
+
+if (empty($_GET['bol'])) {
+    header('location: homeadmin.php');
+}
+
+if (!empty($_POST)) {
+    $boleta = $_GET['bol'];
+    $nombre = $_POST['nombre'];
+    $paterno = $_POST['paterno'];
+    $materno = $_POST['materno'];
+    $nacimiento = $_POST['nacimiento'];
+    $genero = $_POST['SelecGenero'];
+    $curp = $_POST['curp'];
+    $direccion = $_POST['direccion'];
+    $colonia = $_POST['colonia'];
+    $alcaldia = $_POST['alcaldia'];
+    $CP = $_POST['CP'];
+    $telefono = $_POST['telefono'];
+    $correo = $_POST['correo'];
+    $escuela = $_POST['escuela'];
+    $otraEscuela = $_POST['nomescuela'];
+    $entidad = $_POST['entidad'];
+    $promedio = $_POST['promedio'];
+    $escomopcion = $_POST['escomopcion'];
+    $NLaboratorio = $_POST['lab'];
+    $NHorario = $_POST['hora'];
+    $escuelaFinal;
+
+    if ($escuela == "oo") {
+        $escuelaFinal = $otraEscuela;
+    } else {
+        $escuelaFinal = $escuela;
+    }
+
+    $update = "UPDATE alumno SET 
+                nombre = '$nombre', 
+                paterno = '$paterno', 
+                materno = '$materno', 
+                nacimiento = '$nacimiento', 
+                genero = '$genero', 
+                curp = '$curp', 
+                calleNum = '$direccion', 
+                colonia = '$colonia', 
+                alcaldia = '$alcaldia', 
+                cp = '$CP', 
+                telefono = '$telefono', 
+                correo = '$correo', 
+                escuelap = '$escuelaFinal', 
+                entidadF = '$entidad', 
+                promedio = '$promedio', 
+                escomOpcion = '$escomopcion', 
+                horario = '$NHorario', 
+                salon = '$NLaboratorio' WHERE boleta = '$boleta'";
+
+    $actualizado = mysqli_query($conex, $update);
+
+    if ($actualizado) {
+        include_once 'homeadmin.php?msg=1';
+    } else {
+        include_once 'homeadmin.php?msg=2';
+    }
+}
+
+$boleta = $_GET['bol'];
+$consulta = "SELECT * FROM alumno WHERE boleta = '$boleta'";
+
+$resultado = mysqli_query($conex, $consulta);
+$filas = mysqli_num_rows($resultado);
+
+if ($filas == 0) {
+    header('location: homeadmin.php');
+} else {
+    while ($datos = mysqli_fetch_array($resultado)) {
+        $boleta = $datos['boleta'];
+        $nombre = $datos['nombre'];
+        $paterno = $datos['paterno'];
+        $materno = $datos['materno'];
+        $fechaNac = $datos['nacimiento'];
+        $gen = $datos['genero'];
+        $curp = $datos['curp'];
+        $calle = $datos['calleNum'];
+        $col = $datos['colonia'];
+        $alca = $datos['alcaldia'];
+        $cp = $datos['cp'];
+        $tel = $datos['telefono'];
+        $correo = $datos['correo'];
+        $escuelap = $datos['escuelap'];
+        $entidadProc = $datos['entidadF'];
+        $prom = $datos['promedio'];
+        $escOpc = $datos['escomOpcion'];
+        $hora = $datos['horario'];
+        $lab = $datos['salon'];
+    }
+}
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-tran.dtd">
 <html xmls="https://www.w3.org/1999/xhtm" xml:lang="sp" lang="sp">
 
@@ -22,16 +121,6 @@
     <nav class="nav-wrapper blue darken-3" role="navigation">
         <div class="nav-wrapper container ">
             <a id="logo-container" href="http://localhost/Proyecto-web/php/admin/vistas/homeadmin.php" class="brand-logo white-text"><img src="http://localhost/Proyecto-web/recursos/logoESCOMIPN.png" width="85%" height="85%"></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="formRegistro.html" class="white-text">Registrarse</a></li>
-                <li><a href="#" class="white-text">Iniciar Sesión</a></li>
-            </ul>
-
-            <ul id="nav-mobile" class="sidenav blue darken-4">
-                <li><a href="#" class="white-text">Iniciar Sesión</a></li>
-                <li><a href="formRegistro.html" class="white-text">Registrarse</a></li>
-            </ul>
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger  white-text"><i class="material-icons">menu</i></a>
         </div>
     </nav>
     <!--Cierre de la barra de navegacion-->
@@ -39,17 +128,14 @@
     <div class="container">
         <div class="row">
             <!---Inicio del formulario-->
-            <form action="../../../php/verfDatos.php" class="col s12" id="formulario" name="formulario" method="post">
+            <form action="" class="col s12" id="formulario" name="formulario" method="post">
                 <div class="row">
-                    <div class="input-field col s12">
-                        <p class="pink-text text-darken-4">Recuerde: (*) El campo es obligatorio</p>
-                    </div>
                 </div>
                 <fieldset>
                     <legend>Identidad </legend>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_boleta">
-                            <input type="text" id="boleta" size="10" name="boleta" maxlength="10">
+                            <input type="text" readonly id="boleta" size="10" name="boleta" maxlength="10" value="<?php echo $boleta ?>">
                             <label for="boleta">No. de Boleta*:</label>
                             <p class="formulario__input-error">Esa boleta no existe</p>
                         </div>
@@ -57,7 +143,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_nombre">
-                            <input type="text" id="nombre" size="30" name="nombre">
+                            <input type="text" id="nombre" size="30" name="nombre" value="<?php echo $nombre ?>">
                             <label for="nombre">Nombre*:</label>
                             <p class="formulario__input-error">El nombre solo puede contener letras</p>
                         </div>
@@ -65,7 +151,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_paterno">
-                            <input type="text" id="paterno" size="20" name="paterno">
+                            <input type="text" id="paterno" size="20" name="paterno" value="<?php echo $paterno ?>">
                             <label for="apePat">Apellido Paterno*:</label>
                             <p class="formulario__input-error">El apellido paterno solo puede contener letras</p>
                         </div>
@@ -73,15 +159,15 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_materno">
-                            <input type="text" id="materno" size="20" name="materno">
+                            <input type="text" id="materno" size="20" name="materno" value="<?php echo $materno ?>">
                             <label for="apeMate">Apellido Materno:*</label>
-                            <p class="formulario__input-error">El apellido materno solo puede contener letras</p>
+                            <p class="formulario__input-error">Colonia invalidaEl apellido materno solo puede contener letras</p>
                         </div>
 
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_nacimiento">
-                            <input type="date" id="nacimiento" name="nacimiento">
+                            <input type="date" id="nacimiento" name="nacimiento" value="<?php echo $fechaNac ?>">
                             <label for="nacimiento">Fecha de Nacimiento*:</label>
                             <p class="formulario__input-error">El formato de la fecha no es el siguiente: dd/mm/aaaa</p>
                         </div>
@@ -93,23 +179,45 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="genero">
-                            <p>
-                                <label>
-                                    <input name="SelecGenero" type="radio" id="SelecM" value="Masculino" checked />
-                                    <span>Masculino</span>
-                                </label>
-                            </p>
-                            <p>
-                                <label>
-                                    <input name="SelecGenero" type="radio" id="SelecF" value="Femenino" />
-                                    <span>Femenino</span>
-                                </label>
-                            </p>
+                            <?php
+                            if ($gen == "Masculino") {
+                            ?>
+                                <p>
+                                    <label>
+                                        <input name="SelecGenero" type="radio" id="SelecM" value="Masculino" checked />
+                                        <span>Masculino</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input name="SelecGenero" type="radio" id="SelecF" value="Femenino" />
+                                        <span>Femenino</span>
+                                    </label>
+                                </p>
+                            <?php
+                            } else {
+                            ?>
+                                <p>
+                                    <label>
+                                        <input name="SelecGenero" type="radio" id="SelecM" value="Masculino" />
+                                        <span>Masculino</span>
+
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input name="SelecGenero" type="radio" id="SelecF" value="Femenino" checked />
+                                        <span>Femenino</span>
+                                    </label>
+                                </p>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_curp">
-                            <input type="text" id="curp" size="20" minlength="18" maxlength="18" name="curp">
+                            <input type="text" id="curp" size="20" minlength="18" maxlength="18" name="curp" value="<?php echo $curp ?>">
                             <label for="curp">CURP*:</label>
                             <p class="formulario__input-error">El CURP no existe</p>
                         </div>
@@ -122,14 +230,14 @@
                     <legend>Contacto</legend>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_direccion">
-                            <input type="text" id="direccion" name="direccion">
+                            <input type="text" id="direccion" name="direccion" value="<?php echo $calle ?>">
                             <label for="direccion">Calle y número*: </label>
                             <p class="formulario__input-error">Debe de tener el siguiente formato calle numero: ej. Republica de Argentina 36 </p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_colonia">
-                            <input type="text" id="colonia" name="colonia">
+                            <input type="text" id="colonia" name="colonia" value="<?php echo $col ?>">
                             <label for="colonia">Colonia*: </label>
                             <p class="formulario__input-error">Colonia invalida</p>
                         </div>
@@ -142,7 +250,7 @@
                     <div class="row">
                         <div class="input-field col s12" id="grupo_alcaldia" r>
                             <select name="alcaldia" id="alcaldia" class="browser-default">
-                                <option value="0" disabled selected>-- Seleccione una --</option>
+                                <option value="<?php echo $alca ?>" selected><?php echo $alca ?></option>
                                 <option value="Álvaro Obregón">&Aacute;lvaro Obreg&oacute;n</option>
                                 <option value="Azcapotzalco">Azcapotzalco</option>
                                 <option value="Benito Juárez">Benito Ju&aacute;rez</option>
@@ -166,7 +274,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_CP">
-                            <input type="number" id="CP" name="CP" size="5" maxlength="5">
+                            <input type="number" id="CP" name="CP" size="5" maxlength="5" value="<?php echo $cp ?>">
                             <label for="CP">C&oacute;digo Postal*: </label>
                             <p class="formulario__input-error">Codigo Postal invalido (Recuerde que debe contener 5 números)</p>
                         </div>
@@ -174,14 +282,14 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_telefono">
-                            <input type="number" id="telefono" name="telefono" size="10" maxlength="10">
+                            <input type="number" id="telefono" name="telefono" size="10" maxlength="10" value="<?php echo $tel ?>">
                             <label for="tel">Tel&eacute;fono celular*: </label>
                             <p class="formulario__input-error">Telefono o celular invalido. *Recuerde que el telefono debe conter 10 números</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_correo">
-                            <input type="text" id="correo" name="correo">
+                            <input type="text" id="correo" name="correo" value="<?php echo $correo ?>">
                             <label for="correo">Correo electr&oacute;nico*: </label>
                             <p class="formulario__input-error">Correo Invalido * Ejemplo: perez123@gmail.com</p>
                         </div>
@@ -200,7 +308,7 @@
                         <div class="input-field col s12" id="grupo_escuela">
                             <!--<script src="../../../js/ValProcedencia.js"></script>-->
                             <select name="escuela" id="escuela" class="browser-default" onchange="showNomEsc(this)">
-                                <option value="0" disabled selected>--Selecciona una --</option>
+                                <option value="<?php echo $escuelap ?>" selected><?php echo $escuelap ?></option>
                                 <option value="CECyT 1">CECyT 1 “Gonzalo V&aacute;zquez Vela”</option>
                                 <option value="CECyT 2">CECyT 2 "Miguel Bernard Perales"</option>
                                 <option value="CECyT 3">CECyT 3 "Estanislao Ramirez Ru&iacute;z"</option>
@@ -243,7 +351,7 @@
                     <div class="row">
                         <div class="input-field col s12" id="grupo_entidad">
                             <select id="entidad" name="entidad" class="browser-default">
-                                <option value="0" disabled selected>--Selecciona una --</option>
+                                <option value="<?php echo $entidadProc ?>" selected><?php echo $entidadProc ?></option>
                                 <option value="Aguascalientes">Aguascalientes</option>
                                 <option value="Baja California">Baja California</option>
                                 <option value="Baja California Sur">Baja California Sur</option>
@@ -283,7 +391,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_promedio">
-                            <input type="number" id="promedio" name="promedio" step="0.01" min="0" max="10">
+                            <input type="number" id="promedio" name="promedio" step="0.01" min="0" max="10" value="<?php echo $prom ?>">
                             <label for="promedio">Promedio*: </label>
                             <p class="formulario__input-error">Promedio incorrecto, debe ser un n&uacute;mero entre 6 y 10 con 2 decimales </p>
                         </div>
@@ -295,31 +403,131 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <p>
-                                <label>
-                                    <input type="radio" id="escomopcion" value="1" name="escomopcion" checked />
-                                    <span>Primera opci&oacute;n</span>
-                                </label>
-                            </p>
-                            <p>
-                                <label>
-                                    <input type="radio" id="escomopcion" value="2" name="escomopcion" />
-                                    <span>Segunda opci&oacute;n</span>
-                                </label>
-                            </p>
-                            <p>
-                                <label>
-                                    <input type="radio" id="escomopcion" value="3" name="escomopcion" />
-                                    <span>Tercera opci&oacute;n</span>
-                                </label>
-                            </p>
-                            <p>
-                                <label>
-                                    <input type="radio" id="escomopcion" value="4" name="escomopcion" />
-                                    <span>Cuarta opci&oacute;n</span>
-                                </label>
-                            </p>
+                            <?php
+                            if ($escOpc == "1") {
+                            ?>
+                                <p>
+                                    <label>
+                                        <input type="radio" id="escomopcion" value="1" name="escomopcion" checked />
+                                        <span>Primera opci&oacute;n</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input type="radio" id="escomopcion" value="2" name="escomopcion" />
+                                        <span>Segunda opci&oacute;n</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input type="radio" id="escomopcion" value="3" name="escomopcion" />
+                                        <span>Tercera opci&oacute;n</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input type="radio" id="escomopcion" value="4" name="escomopcion" />
+                                        <span>Cuarta opci&oacute;n</span>
+                                    </label>
+                                </p>
+                            <?php
+                            } else if ($escOpc == "2") {
+                            ?>
+                                <p>
+                                    <label>
+                                        <input type="radio" id="escomopcion" value="1" name="escomopcion" />
+                                        <span>Primera opci&oacute;n</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input type="radio" id="escomopcion" value="2" name="escomopcion" checked />
+                                        <span>Segunda opci&oacute;n</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input type="radio" id="escomopcion" value="3" name="escomopcion" />
+                                        <span>Tercera opci&oacute;n</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input type="radio" id="escomopcion" value="4" name="escomopcion" />
+                                        <span>Cuarta opci&oacute;n</span>
+                                    </label>
+                                </p>
+                            <?php
+                            } else if ($escOpc == "3") {
+                            ?>
+                                <p>
+                                    <label>
+                                        <input type="radio" id="escomopcion" value="1" name="escomopcion" />
+                                        <span>Primera opci&oacute;n</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input type="radio" id="escomopcion" value="2" name="escomopcion" />
+                                        <span>Segunda opci&oacute;n</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input type="radio" id="escomopcion" value="3" name="escomopcion" checked />
+                                        <span>Tercera opci&oacute;n</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input type="radio" id="escomopcion" value="4" name="escomopcion" />
+                                        <span>Cuarta opci&oacute;n</span>
+                                    </label>
+                                </p>
+                            <?php
+                            } else {
+                            ?>
+                                <p>
+                                    <label>
+                                        <input type="radio" id="escomopcion" value="1" name="escomopcion" />
+                                        <span>Primera opci&oacute;n</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input type="radio" id="escomopcion" value="2" name="escomopcion" />
+                                        <span>Segunda opci&oacute;n</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input type="radio" id="escomopcion" value="3" name="escomopcion" />
+                                        <span>Tercera opci&oacute;n</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input type="radio" id="escomopcion" value="4" name="escomopcion" checked />
+                                        <span>Cuarta opci&oacute;n</span>
+                                    </label>
+                                </p>
+                            <?php
+                            }
+                            ?>
                         </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Sal&oacute;n y horario</legend>
+                    <div class="input-field col s12" id="horario">
+                        <input type="text" id="hora" name="hora" value="<?php echo $hora ?>">
+                        <label for="hora">Horario*: </label>
+                        <p class="formulario__input-error">Horario invalido</p>
+                    </div>
+                    <div class="input-field col s12" id="salon">
+                        <input type="text" id="lab" name="lab" value="<?php echo $lab ?>">
+                        <label for="hora">Sal&oacute;n*: </label>
+                        <p class="formulario__input-error">Salon invalido</p>
                     </div>
                 </fieldset>
                 <!---Fin del Formulario-->
@@ -353,7 +561,7 @@
 
     </div>
 
-    <script src="../../../js/validaciones.js"></script>
+    <script src="../../../js/validacionesAdminMod.js"></script>
     <!--Para validar el formulario-->
 
 

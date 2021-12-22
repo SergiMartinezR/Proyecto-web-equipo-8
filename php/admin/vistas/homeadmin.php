@@ -1,4 +1,14 @@
 <?php
+
+if($_GET['msg'] == 1){
+    echo "<script>alert('Se actualizaron los datos del alumno')</script>";
+} else if ($_GET['msg'] == 3){
+    echo 'hola';
+    echo "<script>alert('Se eliminó correctamente el alumno')</script>";
+}else if($_GET['msg'] == 2){
+    echo "<script>alert('Ha ocurrido un error')</script>";
+}
+
 if (!isset($_SESSION['us'])) {
     echo "<script>alert('Por favor inicie sesión')</script>";
     include_once 'http://localhost/Proyecto-web/php/admin/validar.php';
@@ -44,11 +54,11 @@ if (!isset($_SESSION['us'])) {
     <div id="index-banner" class="parallax-container">
         <div class="section no-pad-bot">
             <div class="container">
-                <h4 class="header col s12 center blue-text text-darken-4">Lista de alumnos registrados</h5>
-                    <br><br>
-                    <div class="row center">
-                        <a href="http://localhost/Proyecto-web/html/usuarios/alumno/formRegistro.html" class="btn-large waves-effect waves-light blue darken-4">Registrar nuevo alumno</a>
-                    </div>
+                <h4 class="header col s12 center blue-text text-darken-4">Lista de alumnos registrados</h4>
+                <br><br>
+                <div class="row center">
+                    <a href="http://localhost/Proyecto-web/html/usuarios/alumno/formRegistro.html" class="btn-large waves-effect waves-light blue darken-4">Registrar nuevo alumno</a>
+                </div>
             </div>
         </div>
         <div class="parallax"><img src="http://localhost/Proyecto-web/recursos/datos.png" alt="Inicio"></div>
@@ -109,9 +119,9 @@ if (!isset($_SESSION['us'])) {
                     <td><?php echo $datos['horario'] ?></td>
                     <td><?php echo $datos['salon'] ?></td>
                     <td>
-                        <a href="http://localhost/Proyecto-web/php/admin/vistas/actualizarAlumno.php?bol=<?php echo $datos['boleta'] ?>" class="link-edit">Editar</a>
+                        <a href="vistas/actualizarAlumno.php?bol=<?php echo $datos['boleta'] ?>" class="link-edit">Editar</a>
                         |
-                        <a href="#" class="link-delete">Eliminar</a>
+                        <a href="vistas/eliminarAlumno.php?bol=<?php echo $datos['boleta'] ?>" class="link-delete">Eliminar</a>
                     </td>
                 </tr>
         <?php
