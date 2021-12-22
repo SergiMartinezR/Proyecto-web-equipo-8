@@ -161,7 +161,7 @@ if ($filas == 0) {
                         <div class="input-field col s12" id="grupo_materno">
                             <input type="text" id="materno" size="20" name="materno" value="<?php echo $materno ?>">
                             <label for="apeMate">Apellido Materno:*</label>
-                            <p class="formulario__input-error">Colonia invalidaEl apellido materno solo puede contener letras</p>
+                            <p class="formulario__input-error">El apellido materno solo puede contener letras</p>
                         </div>
 
                     </div>
@@ -169,7 +169,7 @@ if ($filas == 0) {
                         <div class="input-field col s12" id="grupo_nacimiento">
                             <input type="date" id="nacimiento" name="nacimiento" value="<?php echo $fechaNac ?>">
                             <label for="nacimiento">Fecha de Nacimiento*:</label>
-                            <p class="formulario__input-error">El formato de la fecha no es el siguiente: dd/mm/aaaa</p>
+                            <p class="formulario__input-error">El año de la fecha no es valido o formato no es el siguiente: dd/mm/aaaa</p>
                         </div>
                     </div>
                     <div class="row">
@@ -232,14 +232,14 @@ if ($filas == 0) {
                         <div class="input-field col s12" id="grupo_direccion">
                             <input type="text" id="direccion" name="direccion" value="<?php echo $calle ?>">
                             <label for="direccion">Calle y número*: </label>
-                            <p class="formulario__input-error">Debe de tener el siguiente formato calle numero: ej. Republica de Argentina 36 </p>
+                            <p class="formulario__input-error">Debe de tener el siguiente formato calle número: ej. Republica de Argentina 36 </p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_colonia">
                             <input type="text" id="colonia" name="colonia" value="<?php echo $col ?>">
                             <label for="colonia">Colonia*: </label>
-                            <p class="formulario__input-error">Colonia invalida</p>
+                            <p class="formulario__input-error">Colonía invalida</p>
                         </div>
                     </div>
                     <div class="row">
@@ -269,14 +269,14 @@ if ($filas == 0) {
                                 <option value="Xochimilco">Xochimilco</option>
 
                             </select>
-                            <p class="formulario__input-error">Seleccione una alcaldia</p>
+                            <p class="formulario__input-error">Seleccione una alcaldía</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12" id="grupo_CP">
                             <input type="number" id="CP" name="CP" size="5" maxlength="5" value="<?php echo $cp ?>">
                             <label for="CP">C&oacute;digo Postal*: </label>
-                            <p class="formulario__input-error">Codigo Postal invalido (Recuerde que debe contener 5 números)</p>
+                            <p class="formulario__input-error">Código Postal invalido (Recuerde que debe contener 5 números)</p>
                         </div>
 
                     </div>
@@ -284,7 +284,7 @@ if ($filas == 0) {
                         <div class="input-field col s12" id="grupo_telefono">
                             <input type="number" id="telefono" name="telefono" size="10" maxlength="10" value="<?php echo $tel ?>">
                             <label for="tel">Tel&eacute;fono celular*: </label>
-                            <p class="formulario__input-error">Telefono o celular invalido. *Recuerde que el telefono debe conter 10 números</p>
+                            <p class="formulario__input-error">Teléfono o celular invalido. *Recuerde que el telefono debe conter 10 números</p>
                         </div>
                     </div>
                     <div class="row">
