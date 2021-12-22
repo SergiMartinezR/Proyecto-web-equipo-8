@@ -49,3 +49,4 @@ $_SESSION['escomopcion'] = trim($_POST['escomopcion']);
 $_SESSION['escuela'] = trim($_POST['escuela']);
 $_SESSION['nomescuela'] = trim($_POST['nomescuela']);
 $_SESSION['escuelaFinal']= $escuelaFinal;
+?>

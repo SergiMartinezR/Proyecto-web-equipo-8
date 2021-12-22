@@ -9,7 +9,7 @@ include("datosForm.php");
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VERIFICACION DATOS</title>
+  <title>Verificación de datos</title>
 
   <!-- CSS  -->
   <!-- Compiled and minified CSS -->
@@ -30,11 +30,11 @@ include("datosForm.php");
 
       <ul class="right hide-on-med-and-down">
         <li><a href="../html/usuarios/alumno/formRegistro.html" class="white-text">Registrarse</a></li>
-        <li><a href="#" class="white-text">Iniciar Sesión</a></li>
+        <li><a href="../html/usuarios/alumno/formRecuperar.html" class="white-text">Recuperar mi información</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav blue darken-4">
-        <li><a href="#" class="white-text">Iniciar Sesión</a></li>
+        <li><a href="../html/usuarios/alumno/formRecuperar.html" class="white-text">Recuperar mi información</a></li>
         <li><a href="../html/usuarios/alumno/formRegistro.html" class="white-text">Registrarse</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger  white-text"><i class="material-icons">menu</i></a>
@@ -46,8 +46,8 @@ include("datosForm.php");
   <h2 class="center-align"> <i class="large material-icons">account_circle</i> Datos del alumno </h2>
   <div class="divider"></div>
   <p class="center-align"><b><i>INSTRUCCIONES: </i></b></p>
-  <p class="center-align"> Porfavor verifique que los datos sean <b> CORRECTOS</b>.
-    En el caso de que sean <b> INCORRECTOS </b> seleccione el bot&oacute;n de <i>MODIFICAR</i> y si estos son <b>CORRECTOS </b>el de <i>GENERAR PDF</i>.</p>
+  <p class="center-align"> Hola <?php echo $nombre;?> <?php echo $paterno;?> <?php echo $materno; ?>  verifica que los datos que ingresaste sean <b> CORRECTOS</b>.</p> 
+  <p class="center-align">En el caso de que sean <b> INCORRECTOS </b> seleccione el bot&oacute;n de <i>Modificar</i> y si estos son <b>CORRECTOS </b>el de <i>Aceptar</i>.</p> 
 
   <div class="row ">
     <div class="col s2"></div>
@@ -116,20 +116,10 @@ include("datosForm.php");
 
 
 
-
-    <!-- 
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
--->
-    <!--  
-    <script >
-          document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.collapsible');
-    var instances = M.Collapsible.init(elems, options);
-  });
-    </script>
--->
+    <footer class="page-footer blue darken-3">
+        <div class="container">
+        </div>
+    </footer>
 
 
 </body>

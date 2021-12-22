@@ -48,11 +48,11 @@ $otraEscuela = $_SESSION['nomescuela'];
 
             <ul class="right hide-on-med-and-down">
                 <li><a href="../html/usuarios/alumno/formRegistro.html" class="white-text">Registrarse</a></li>
-                <li><a href="#" class="white-text">Iniciar Sesión</a></li>
+                <li><a href="../html/usuarios/alumno/formRecuperar.html" class="white-text">Recuperar mi información</a></li>
             </ul>
 
             <ul id="nav-mobile" class="sidenav blue darken-4">
-                <li><a href="#" class="white-text">Iniciar Sesión</a></li>
+                <li><a href="../html/usuarios/alumno/formRecuperar.html" class="white-text">Recuperar mi información</a></li>
                 <li><a href="../html/usuarios/alumno/formRegistro.html" class="white-text">Registrarse</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger  white-text"><i class="material-icons">menu</i></a>
@@ -82,7 +82,7 @@ $otraEscuela = $_SESSION['nomescuela'];
                     <div class="row">
                         <div class="input-field col s12" id="grupo_nombre">
                             <input type="text" id="nombre" size="30" name="nombre" value="<?PHP echo $nombre ?>">
-                            <label for="nombre">Nombre*:</label>
+                            <label for="nombre">Nombre(s)*:</label>
                             <p class="formulario__input-error">El nombre solo puede contener letras</p>
                         </div>
 
@@ -107,7 +107,7 @@ $otraEscuela = $_SESSION['nomescuela'];
                         <div class="input-field col s12" id="grupo_nacimiento">
                             <input type="date" id="nacimiento" name="nacimiento" value="<?PHP echo $nacimiento ?>">
                             <label for="nacimiento">Fecha de Nacimiento*:</label>
-                            <p class="formulario__input-error">El formato de la fecha no es el siguiente: dd/mm/aaaa</p>
+                            <p class="formulario__input-error">El año de la fecha no es valido o formato no es el siguiente: dd/mm/aaaa</p>
                         </div>
                     </div>
                     <div class="row">
@@ -421,7 +421,10 @@ $otraEscuela = $_SESSION['nomescuela'];
 
     <script src="../js/validacionesMod.js"></script>
     <!--Para validar el formulario-->
-
+    <footer class='page-footer blue darken-3'>
+        <div class='container'>
+        </div>
+    </footer>
 
 
 </body>
